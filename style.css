@@ -15,3 +15,8 @@ Text Domain: jers-twenty-twentyfive-child-theme
 Tags: 
 */
 
+@media (max-width: 1000px) {
+    .wp-block-post-template-is-layout-grid {
+        grid-template-columns: 1fr; /* This will stack the columns into a single column below 500px */
+    }
+}
