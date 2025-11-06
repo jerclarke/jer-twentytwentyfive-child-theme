@@ -140,6 +140,28 @@
 			"core/post-title": {
 				"typography": {
 					"fontWeight": "900"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var(--wp--preset--color--contrast)"
+						},
+						":hover": {
+							"color": {
+							"text": "var(--wp--preset--color--accent-1)"
+							}
+						}
+					}
+				}
+			},
+			"core/post-date": {
+				"typography": {
+					"fontSize": "var:preset|font-size|medium"
+				}
+			},
+			"core/post-terms": {
+				"typography": {
+					"fontSize": "var:preset|font-size|medium"
 				}
 			},
 			"core/navigation": {
