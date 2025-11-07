@@ -28,6 +28,31 @@ Tags:
 	margin-block-start: .4rem;
 }
 
+/* Some aggressive text-wrap values that can't go in theme.json*/
+body {
+	text-wrap: pretty;
+}
+.wp-block-query .wp-block-post-title,
+.wp-block-media-text * {
+	text-wrap: balance;
+}
+
+/* Media & Text block is foolish, remove 8% side padding on text section and replace with sensible gap */
+.wp-block-media-text>.wp-block-media-text__media {
+	align-self: start;
+}
+.wp-block-media-text {
+	gap: 4vw;
+}
+
+.wp-block-media-text>.wp-block-media-text__content {
+	padding-left: 0;
+	padding-right: 0;
+}
+.wp-block-media-text>.wp-block-media-text__content p:first-child {
+	margin-block-start: 0;
+}
+
 /* Comments styles because I don't want to override the template and there's nothing to hook into for each .comment */
 .wp-block-comments .comment {
 	border-left: 2px solid #ddd;
