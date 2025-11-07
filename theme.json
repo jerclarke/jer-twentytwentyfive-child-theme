@@ -110,18 +110,32 @@
 						"textDecoration": "none"
 					}
 				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "clamp(1.5rem, 3vw, 2rem)",
+					"fontWeight": "900"
+				}
 			}
 		},
 		"blocks": {
 			"core/site-title": {
+				"css": "text-shadow: clamp(1px, .15vw, 2px) clamp(1px, .15vw, 2px) 0px color-mix(in srgb, var(--wp--preset--color--accent-1) 85%, transparent)",
 				"elements": {
 					"link": {
+						"spacing": {
+							"padding": {
+								"right": ".5rem",
+								"left": ".5rem"
+							}
+						},
 						":hover": {
 							"color": {
-								"text": "var(--wp--preset--color--accent-1)"
+								"background": "var:preset|color|accent-1",
+								"text": "var:preset|color|base"
 							},
 							"typography": {
-								"textDecoration": "underline"
+								"textDecoration": "none"
 							}
 						},
 						"typography": {
@@ -131,6 +145,7 @@
 					}
 				},
 				"typography": {
+					"fontSize": "clamp(2rem, 5vw, 4rem)",
 					"fontFamily": "inherit",
 					"fontStyle": "inherit",
 					"fontWeight": "900",
