@@ -28,7 +28,7 @@
 					"slug": "accent-2"
 				},
 				{
-					"color": "#eeeeee",
+					"color": "#f1f1f1",
 					"name": "Accent 3",
 					"slug": "accent-3"
 				},
@@ -145,7 +145,7 @@
 					}
 				},
 				"typography": {
-					"fontSize": "clamp(2rem, 5vw, 4rem)",
+					"fontSize": "clamp(2rem, 5vw, 3.75rem)",
 					"fontFamily": "inherit",
 					"fontStyle": "inherit",
 					"fontWeight": "900",
@@ -163,7 +163,7 @@
 						},
 						":hover": {
 							"color": {
-							"text": "var(--wp--preset--color--accent-1)"
+								"text": "var(--wp--preset--color--accent-1)"
 							}
 						}
 					}
