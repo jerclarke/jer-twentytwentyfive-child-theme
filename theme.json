@@ -3,7 +3,7 @@
 	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
 	"settings": {
 		"layout": {
-			"contentSize": "645px",
+			"contentSize": "800px",
 			"wideSize": "1100px",
 			"allowEditing": true
 		},
