@@ -367,6 +367,22 @@
 				"typography": {
 					"fontWeight": "600"
 				}
+			},
+			"core/query-pagination": {
+				"typography": {
+					"fontWeight": "600",
+					"fontSize": "var:preset|font-size|large"
+				},
+				"color": {
+					"text": "var:preset|color|accent-4"
+				},
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				}
 			}
 		}
 	}
