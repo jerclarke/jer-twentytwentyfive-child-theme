@@ -37,3 +37,7 @@ Tags:
 .wp-block-comments .comment > .wp-block-group {
 	padding-bottom: var(--wp--preset--spacing--30);
 }
+/* This could go in theme.json if it wasn't for the "+" */
+.comment + .comment-respond {
+	margin-top: calc(var(--wp--preset--spacing--50) * -1);
+}

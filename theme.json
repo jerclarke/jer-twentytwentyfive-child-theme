@@ -203,8 +203,7 @@
 						"left": "var:preset|spacing|30"
 					},
 					"margin": {
-						"bottom": "var:preset|spacing|60",
-						"top": "calc(var(--wp--preset--spacing--50) * -1)"
+						"bottom": "var:preset|spacing|60"
 					}
 				}
 			},
