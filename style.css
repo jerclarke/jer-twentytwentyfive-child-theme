@@ -27,3 +27,13 @@ Tags:
 :root :where(.is-layout-constrained)>.wp-block-post-terms {
 	margin-block-start: .4rem;
 }
+
+/* Comments styles because I don't want to override the template and there's nothing to hook into for each .comment */
+.wp-block-comments .comment {
+	border-left: 2px solid #ddd;
+	border-left: 2px solid var(--wp--preset--color--accent-3);
+	padding-left: 1.2rem;
+}
+.wp-block-comments .comment > .wp-block-group {
+	padding-bottom: var(--wp--preset--spacing--30);
+}
