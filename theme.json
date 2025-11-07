@@ -2,6 +2,11 @@
 	"version": 3,
 	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
 	"settings": {
+		"layout": {
+			"contentSize": "645px",
+			"wideSize": "1100px",
+			"allowEditing": true
+		},
 		"color": {
 			"defaultDuotone": false,
 			"defaultGradients": false,
@@ -73,6 +78,7 @@
 		}
 	},
 	"styles": {
+		"css": ".round-image-container img {\nborder-radius: 50%;\n}\n\n.wp-block-media-text>.wp-block-media-text__content {\nword-break: default;\n}h1.wp-block-query-title {max-width: var(--wp--style--global--wide-size);}",
 		"typography": {
 			"fontFamily": "var:preset|font-family|system-sans-serif",
 			"fontSize": "var:preset|font-size|large",

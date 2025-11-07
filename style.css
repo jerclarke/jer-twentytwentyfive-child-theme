@@ -27,8 +27,3 @@ Tags:
 :root :where(.is-layout-constrained)>.wp-block-post-terms {
 	margin-block-start: .4rem;
 }
-
-/* Can't find a way to make them all use .alignwide without modifying a ton of templates, these are the headings before lists of posts.  */
-h1.wp-block-query-title {
-	max-width: var(--wp--style--global--wide-size);
-}
