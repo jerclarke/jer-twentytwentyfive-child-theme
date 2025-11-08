@@ -39,8 +39,8 @@
 		<!-- /wp:group -->
 	<!-- /wp:query-no-results -->
 	 
-	<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-	<div class="wp-block-group alignwide">
+	<!-- wp:group {"align":"wide","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|50"}}}} -->
+	<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--50);">
 		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
 			<!-- wp:query-pagination-previous /-->
 			<!-- wp:query-pagination-numbers /-->
