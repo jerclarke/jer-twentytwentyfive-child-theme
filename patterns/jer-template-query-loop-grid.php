@@ -39,7 +39,6 @@
 		<!-- /wp:group -->
 	<!-- /wp:query-no-results -->
 	 
-	<!-- ! Note the top padding here shows even when there's no pagination, couldn't find a way to avoid it  -->
 	<!-- wp:group {"align":"wide","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}}} -->
 	<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--40);">
 		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
