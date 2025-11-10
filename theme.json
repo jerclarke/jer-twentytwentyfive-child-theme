@@ -166,6 +166,12 @@
 					"fontSize": "clamp(1.5rem, 3vw, 2rem)",
 					"fontWeight": "900"
 				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "clamp(1.5rem, 3vw, 2rem)",
+					"fontWeight": "900"
+				}
 			}
 		},
 		"blocks": {
