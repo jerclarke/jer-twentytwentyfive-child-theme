@@ -7,7 +7,15 @@
  * Description: Jer's custom footer with search, responsibility, pages, and categories
  * Inserter: no
  */
+
+// Always show the intro above the footer except in templates where it's inserted in the middle 
+if (!is_home() AND !is_single()) {
+	?>
+<!-- wp:template-part {"slug":"jer-intro"} /-->
+	<?php
+}
 ?>
+
 <!-- wp:group {"metadata":{"categories":["footer"],"patternName":"twentytwentyfive/footer","name":"Footer"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"},"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|50"}}},"backgroundColor":"accent-3","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-accent-3-background-color has-background" style="margin-top:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50)">
 	
