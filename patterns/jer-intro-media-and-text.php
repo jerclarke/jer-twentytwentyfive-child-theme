@@ -18,11 +18,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Jer believes in healing from addiction with Buddhist practice and&nbsp;<strong><a href="http://recoverydharma.org/">Recovery Dharma</a></strong>.</p>
+<p>Jer is available to work! Read about <strong><a href='/hire-me'>Jer's skills</a></strong> and <strong><a href="/contact/">get in touch.</a></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left">Jer’s pronouns are&nbsp;<a href="http://simianuprising.com/2017/08/05/about-jer-and-gender/"><strong>They/Them</strong></a></p>
+<p class="has-text-align-left">Jer’s pronouns are&nbsp;<a href="http://simianuprising.com/2017/08/05/about-jer-and-gender/"><strong>They/Them</strong>.</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text --></div>
 <!-- /wp:group --></div>
