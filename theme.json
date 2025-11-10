@@ -207,6 +207,11 @@
 					"fontSize": "clamp(1.75rem, 3vw, 3rem)",
 					"fontWeight": "900"
 				},
+				"spacing": {
+					"margin": {
+						"bottom": "var:preset|spacing|20"
+					}
+				},
 				"elements": {
 					"link": {
 						"color": {
@@ -222,17 +227,32 @@
 			},
 			"core/post-author-name": {
 				"typography": {
-					"fontSize": "var:preset|font-size|medium"
+					"fontSize": "var:preset|font-size|medium",
+					"fontWeight": "600"
 				}
 			},
 			"core/post-date": {
 				"typography": {
-					"fontSize": "var:preset|font-size|medium"
+					"fontSize": "var:preset|font-size|medium",
+					"fontWeight": "600"
 				}
 			},
 			"core/post-terms": {
 				"typography": {
-					"fontSize": "var:preset|font-size|medium"
+					"fontSize": "var:preset|font-size|medium",
+					"textDecoration": "none"
+				},
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none"
+						},
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						}
+					}
 				}
 			},
 			"core/post-comments-form": {

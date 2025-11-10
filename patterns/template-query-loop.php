@@ -20,8 +20,8 @@
 			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"spacing":{"margin":{"top":"0px","bottom":"var:preset|spacing|30"}}}} /-->
 
 			<!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
-			<!-- wp:post-terms {"term":"category"} /-->
- 			<!-- wp:post-date {"isLink":true} /-->
+			<!-- wp:post-terms {"term":"category","fontSize":"small"} /-->
+ 			<!-- wp:post-date {"isLink":true,"fontSize":"small"} /-->
 			<?php
 			//<!-- wp:post-excerpt {"align":"full","fontSize":"medium"} /-->
 			?>

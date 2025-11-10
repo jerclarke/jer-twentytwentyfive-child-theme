@@ -15,7 +15,7 @@
 	<!-- wp:paragraph -->
 		<p>Posted by</p>
 	<!-- /wp:paragraph -->
-	<!-- wp:post-author-name {"isLink":true} /-->
+	<!-- wp:post-author-name /-->
 	<!-- wp:paragraph -->
 		<p>on</p>
 	<!-- /wp:paragraph -->
