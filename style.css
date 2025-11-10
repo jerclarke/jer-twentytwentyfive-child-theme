@@ -54,6 +54,9 @@ body {
 }
 
 /* Comments styles because I don't want to override the template and there's nothing to hook into for each .comment */
+.wp-block-comments-query-loop {
+	margin-top: var(--wp--preset--spacing--50) !important;
+}
 .wp-block-comments .comment {
 	border-left: 2px solid #ddd;
 	border-left: 2px solid var(--wp--preset--color--accent-3);
