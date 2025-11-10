@@ -388,6 +388,23 @@
 					"fontWeight": "600"
 				}
 			},
+			"core/categories": {
+				"css": "list-style: none;padding:0;",
+				"typography": {
+					"fontWeight": "300"
+				},
+				"color": {
+					"text": "var:preset|color|accent-4"
+				},
+				"elements": {
+					"link": {
+						"typography": {
+							"fontWeight": "500",
+							"textDecoration": "none"
+						}
+					}
+				}
+			},
 			"core/query-pagination": {
 				"typography": {
 					"fontWeight": "600",
