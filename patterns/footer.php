@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Jer's footer with search, responsibility, pages, and categories
- * Slug: jers-twenty-twentyfive-child-theme/footer
+ * Slug: jer-twentytwentyfive-child-theme/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  * Description: Jer's custom footer with search, responsibility, pages, and categories
