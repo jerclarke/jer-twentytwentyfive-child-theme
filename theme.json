@@ -122,7 +122,7 @@
 		}
 	},
 	"styles": {
-		"css": ".round-image-container img {\nborder-radius: 50%;\n}\n\n}",
+		"css": ".round-image-container img {border-radius: 50%;} :root{ --jer--preset--round-corners--default: 12px;}",
 		"typography": {
 			"fontFamily": "var:preset|font-family|system-sans-serif",
 			"fontSize": "var:preset|font-size|large",
@@ -195,6 +195,16 @@
 			}
 		},
 		"blocks": {
+			"core/image": {
+				"border": {
+					"radius": "var(--jer--preset--round-corners--default)"
+				}
+			},
+			"core/post-featured-image": {
+				"border": {
+					"radius": "var(--jer--preset--round-corners--default)"
+				}
+			},
 			"core/site-title": {
 				"css": "text-shadow: clamp(1px, .15vw, 2px) clamp(1px, .15vw, 2px) 0px color-mix(in srgb, var(--wp--preset--color--accent-1) 85%, transparent)",
 				"elements": {
