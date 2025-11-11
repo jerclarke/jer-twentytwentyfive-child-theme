@@ -27,7 +27,7 @@
 
 			<!-- wp:column {"verticalAlignment":"center","width":"66.6%"} -->
 				<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.6%">
-				<!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->
+				<!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
 
 				<!-- wp:post-terms {"term":"category","fontSize":"small"} /-->
 
