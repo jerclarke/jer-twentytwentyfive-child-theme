@@ -34,9 +34,8 @@
 				<!-- wp:post-date {"isLink":true,"fontSize":"small"} /-->
 			</div>
 			<!-- /wp:column -->
-			</div>
+		</div>
 		<!-- /wp:columns -->
-		<!-- /wp:post-template -->
 		</div>
 	<!-- /wp:post-template -->
 	 
