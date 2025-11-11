@@ -23,9 +23,9 @@ Tags:
 }
 
 /* Terms and dates in post promo blocks had huge spacing matching blockGap and I couldn't find a way to remove the gap only inside of the post-template, so here we just reduce it to something reasonable. */
-:root :where(.is-layout-constrained)>.wp-block-post-date,
-:root :where(.is-layout-constrained)>.wp-block-post-terms {
-	margin-block-start: .25rem;
+:root .wp-block-post .wp-block-post-date,
+:root .wp-block-post .wp-block-post-terms {
+	margin-block-start: clamp(.15rem, 1vw, .25rem);
 }
 
 /* Some aggressive text-wrap values that can't go in theme.json*/
