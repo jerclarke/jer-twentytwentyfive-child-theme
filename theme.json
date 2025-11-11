@@ -122,7 +122,7 @@
 		}
 	},
 	"styles": {
-		"css": ".round-image-container img {\nborder-radius: 50%;\n}\n\n.wp-block-media-text>.wp-block-media-text__content {\nword-break: default;\n}.archive h1.wp-block-query-title,.wp-block-term-description {max-width: var(--wp--style--global--wide-size);}",
+		"css": ".round-image-container img {\nborder-radius: 50%;\n}\n\n}",
 		"typography": {
 			"fontFamily": "var:preset|font-family|system-sans-serif",
 			"fontSize": "var:preset|font-size|large",
