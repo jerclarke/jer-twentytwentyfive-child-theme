@@ -13,11 +13,11 @@
 
 ?>
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
+<div class="wp-block-group jer-query-loop-list-container">
 <!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]}} -->
 	<div class="wp-block-query">
 		<!-- wp:post-template -->
-		<!-- wp:columns {"verticalAlignment":"center"} -->
+		<!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
 		<div class="wp-block-columns are-vertically-aligned-center">
 			<!-- wp:column {"verticalAlignment":"center","width":"33.3%"} -->
 			<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.3%">
