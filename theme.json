@@ -64,12 +64,12 @@
 				},
 				{
 					"name": "X-Small",
-					"size": "20px",
+					"size": "clamp(12px, 4vw, 20px)",
 					"slug": "30"
 				},
 				{
 					"name": "Small",
-					"size": "30px",
+					"size": "clamp(15px, 4vw, 30px)",
 					"slug": "40"
 				},
 				{
