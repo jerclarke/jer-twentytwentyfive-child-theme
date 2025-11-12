@@ -24,7 +24,7 @@
 				</h1>
 				<!-- /wp:heading -->
 				<!-- wp:group {"backgroundColor":"accent-3","spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}},"layout":{"type":"default"}} -->
-			<div class="wp-block-group has-accent-3-background-color" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
+			<div class="wp-block-group has-accent-3-background-color jer-rounded-group" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
 					<!-- wp:paragraph -->
 					<p><?php echo esc_html_x( 'The page you are looking for doesn\'t exist, or it has been moved. Please try searching using the form below.', '404 error message', 'twentytwentyfive' ); ?></p>
 					<!-- /wp:paragraph -->
