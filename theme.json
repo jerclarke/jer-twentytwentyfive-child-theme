@@ -170,7 +170,7 @@
 		}
 	},
 	"styles": {
-		"css": ".round-image-container img {border-radius: 50%;} :root{ --jer--preset--round-corners--default: 12px;}",
+		"css": ".round-image-container img {border-radius: 50%;} :root{ --jer--preset--round-corners--default: 12px;} :root .wp-block-post .wp-block-post-date,:root .wp-block-post .wp-block-post-terms {margin-block-start: clamp(.15rem, 1vw, .25rem);}.jer-query-loop-grid-item {border-radius:  var(--jer--preset--round-corners--default);}",
 		"typography": {
 			"fontFamily": "var:preset|font-family|system-sans-serif",
 			"fontSize": "var:preset|font-size|large",
