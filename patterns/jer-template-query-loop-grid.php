@@ -11,12 +11,28 @@
  * @since Twenty Twenty-Five 1.0
  */
 
+// TODO Consider having just one query pattern, and switching the format internally when is_home() etc. This would avoid duplicating the pagination and other surrounding formats that are the same, but it might introduce it's own problems!
 ?>
 <!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide">
-		<!-- wp:post-template {"fontSize":"tiny","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
-			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"accent-3","layout":{"type":"constrained","justifyContent":"center"}} -->
-			<div class="wp-block-group jer-query-loop-grid-item has-accent-3-background-color has-background" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
+
+<?php
+// ? Note I tried extracting this as /patterns/jer-query-pagination.php but the query wasn't set up when I did that, it showed the wrong number of pages and the wrong current page. Seems the pagination must be in the same pattern/part/template as the wp:query block.
+if (is_paged()) {?>
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}}} -->
+	<div class="wp-block-group jer-query-pagination" style="padding-top:var(--wp--preset--spacing--40);">
+		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+	</div>
+	<!-- /wp:group -->
+<?php } // is_paged ?>
+
+	<!-- wp:post-template {"fontSize":"tiny","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
+		<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"accent-3","layout":{"type":"constrained","justifyContent":"center"}} -->
+		<div class="wp-block-group jer-query-loop-grid-item has-accent-3-background-color has-background" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
 			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"spacing":{"margin":{"top":"0px","bottom":"var:preset|spacing|30"}}}} /-->
 
 			<!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
@@ -40,7 +56,7 @@
 	<!-- /wp:query-no-results -->
 	 
 	<!-- wp:group {"align":"wide","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}}} -->
-	<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--40);">
+	<div class="wp-block-group jer-query-pagination alignwide" style="padding-top:var(--wp--preset--spacing--40);">
 		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
 			<!-- wp:query-pagination-previous /-->
 			<!-- wp:query-pagination-numbers /-->

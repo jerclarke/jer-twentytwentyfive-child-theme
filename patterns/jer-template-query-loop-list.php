@@ -15,7 +15,20 @@
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group jer-query-loop-list-container">
 <!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]}} -->
-	<div class="wp-block-query">
+<div class="wp-block-query">
+
+<?php if (is_paged()) {?>
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}}} -->
+	<div class="wp-block-group jer-query-pagination" style="padding-top:var(--wp--preset--spacing--40);">
+		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+	</div>
+	<!-- /wp:group -->
+<?php } // is_paged ?>
+
 		<!-- wp:post-template -->
 		<!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
 		<div class="wp-block-columns are-vertically-aligned-center">
@@ -36,7 +49,6 @@
 			<!-- /wp:column -->
 		</div>
 		<!-- /wp:columns -->
-		</div>
 	<!-- /wp:post-template -->
 	 
 	<!-- wp:query-no-results -->
@@ -50,7 +62,7 @@
 	<!-- /wp:query-no-results -->
 	 
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);">
+	<div class="wp-block-group jer-query-pagination" style="padding-top:var(--wp--preset--spacing--40);">
 		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
 			<!-- wp:query-pagination-previous /-->
 			<!-- wp:query-pagination-numbers /-->
