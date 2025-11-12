@@ -26,6 +26,13 @@ Tags:
 body {
 	text-wrap: pretty;
 }
+
+/* https://wordpress.stackexchange.com/questions/431775/how-can-i-change-the-background-color-of-the-built-in-navigation-modal-of-wordpr/431776#431776 */
+:root.has-modal-open {
+	--wp--preset--color--base: var(--wp--preset--color--accent-1);
+	--wp--preset--color--contrast: #fff;
+}
+
 .wp-block-query .wp-block-post-title,
 .wp-block-media-text * {
 	text-wrap: balance;
