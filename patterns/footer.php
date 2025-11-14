@@ -7,14 +7,13 @@
  * Description: Jer's custom footer with search, responsibility, pages, and categories
  * Inserter: no
  */
-
-// Always show the intro above the footer except in templates where it's inserted in the middle 
-if (!is_home() AND !is_single()) {
-	?>
-<!-- wp:template-part {"slug":"jer-intro"} /-->
-	<?php
-}
 ?>
+
+<!-- wp:group -->
+<div class="wp-block-group jer-intro-footer-container">
+	<!-- wp:template-part {"slug":"jer-intro"} /-->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"categories":["footer"],"patternName":"twentytwentyfive/footer","name":"Footer"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"},"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|50"}}},"backgroundColor":"accent-3","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-accent-3-background-color has-background" style="margin-top:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50)">
@@ -47,14 +46,14 @@ if (!is_home() AND !is_single()) {
 			<h3 class="wp-block-heading" style="font-style:normal;font-weight:800">Responsibility</h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"fontSize":"medium"} -->
-			<p class="has-medium-font-size">This website is written and operated by Jer Clarke and licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/ca/">Creative Commons BY-NC-SA</a>.</p>
+			<p class="has-medium-font-size">This website is written and operated by Jer Clarke and licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/ca/">Creative Commons BY-NC-SA</a>.</p>
 			<!-- /wp:paragraph -->
 			<!-- wp:image {"linkDestination":"custom"} -->
-			<figure class="wp-block-image"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/by-nc-sa-ccLicense.png" alt="CC-BY-NC-SA" class=""/></a></figure>
+			<figure class="wp-block-image"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/by-nc-sa-ccLicense.png" alt="CC-BY-NC-SA" class=""/></a></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fit","flexSize":null}},"fontSize":"medium"} -->
-			<p class="has-text-align-left has-medium-font-size">It was built with <a href="https://wordpress.org">WordPress</a> using a custom child theme of <a href="https://wordpress.org/themes/twentytwentyfive/">Twenty Twenty Five</a></p>
+			<p class="has-text-align-left has-medium-font-size">The site was built with <a href="https://wordpress.org">WordPress</a> using a custom child theme of <a href="https://wordpress.org/themes/twentytwentyfive/">Twenty Twenty Five</a></p>
 			<!-- /wp:paragraph --></div>
 		<!-- /wp:group --></div>
 	<!-- /wp:column -->
