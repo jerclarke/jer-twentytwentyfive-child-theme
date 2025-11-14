@@ -1,7 +1,11 @@
 <?php
 /**
- * Title: jer-intro
+ * Title: Jer Intro with avatar and summary text
  * Slug: jer-twentytwentyfive-child-theme/jer-intro
+ * 
+ * @package WordPress
+ * @subpackage Twenty_Twenty_Five
+ * @since Twenty Twenty-Five 1.0
  */
 ?>
 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
