@@ -170,7 +170,7 @@
 		}
 	},
 	"styles": {
-		"css": ".round-image-container img {border-radius: 50%;} :root{ --jer--preset--round-corners--default: 12px;} :root .wp-block-post .wp-block-post-date,:root .wp-block-post .wp-block-post-terms {margin-block-start: clamp(.15rem, 1vw, .25rem);}.jer-rounded-group {border-radius:  var(--jer--preset--round-corners--default);} .home .jer-intro-footer-container, .single .jer-intro-footer-container {display:none;}",
+		"css": ".round-image-container img {border-radius: 50%;} :root{ --jer--preset--round-corners--default: 12px;} :root .wp-block-post .wp-block-post-date,:root .wp-block-post .wp-block-post-terms {margin-block-start: clamp(.15rem, 1vw, .25rem);}.jer-rounded-group {border-radius:  var(--jer--preset--round-corners--default);} .home .jer-intro-footer-container, .single .jer-intro-footer-container {display:none;} .paged .jer-intro-footer-container {display: block} .paged .jer-intro-header-container{display:none;}",
 		"typography": {
 			"fontFamily": "var:preset|font-family|system-sans-serif",
 			"fontSize": "var:preset|font-size|large",

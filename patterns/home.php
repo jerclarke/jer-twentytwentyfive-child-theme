@@ -5,14 +5,15 @@
  * Inserter: no
  */
 
-echo '<!-- wp:template-part {"slug":"header"} /-->';
-
-if (!is_paged()) {
-	echo '<!-- wp:template-part {"slug":"jer-intro"} /-->';
-	echo '<!-- wp:template-part {"slug":"jer-widget-grid"} /-->';
-}
-
 ?>
+<!-- wp:template-part {"slug":"header"} /-->
+<!-- wp:group -->
+<div class="wp-block-group jer-intro-header-container">
+	<!-- wp:template-part {"slug":"jer-intro"} /-->
+	<!-- wp:template-part {"slug":"jer-widget-grid"} /-->
+</div>
+<!-- /wp:group -->
+
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)">
 	<!-- wp:heading {"textAlign":"left","level":1,"layout":{"type":"default"}} -->
