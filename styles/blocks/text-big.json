@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Big & Grey",
+	"slug": "text-big",
+	"blockTypes": ["core/heading", "core/paragraph", "core/list", "core/quote"],
+	"styles": {
+		"color": {
+			"text": "var:preset|color|accent-4"
+		},
+		"typography": {
+			"fontSize": "110%",
+			"lineHeight": "1.5"
+		}
+	}
+}
