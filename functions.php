@@ -47,3 +47,10 @@ function jer_2025_get_pagination_fse_format() {
 <!-- /wp:group -->
 	';
 }
+
+/**
+ * Disable Jetpack AI as much as possible
+ * 
+ * https://jetpack.com/support/create-better-content-with-jetpack-ai/#how-to-disable-jetpack-ai-assistant
+ */
+add_filter( 'jetpack_ai_enabled', '__return_false' );
