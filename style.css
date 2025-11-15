@@ -28,6 +28,17 @@ body {
 	text-wrap: pretty;
 }
 
+/* AFAICT no way to style inline <code> blocks using theme.json. Inadvertently also affects code block which CAN otherwise be styled. */
+code {
+	font-family: var(--wp--preset--font-family--system-monospace);
+	background: var(--wp--preset--color--accent-3);
+	color: var(--wp--preset--color--contrast);
+
+	/* Make it a lil smaller than surrounding text and add padding */
+	padding: .1em .2em;
+	font-size: .9em;
+}
+
 /* https://wordpress.stackexchange.com/questions/431775/how-can-i-change-the-background-color-of-the-built-in-navigation-modal-of-wordpr/431776#431776 */
 :root.has-modal-open {
 	--wp--preset--color--base: var(--wp--preset--color--accent-1);

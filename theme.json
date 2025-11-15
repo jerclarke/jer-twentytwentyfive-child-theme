@@ -248,6 +248,17 @@
 					"radius": "var(--jer--preset--round-corners--default)"
 				}
 			},
+			"core/code": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|system-monospace",
+					"fontSize": "var:preset|font-size|medium",
+					"fontWeight": "500"
+				},
+				"color": {
+					"background": "var:preset|color|accent-3",
+					"text": "var:preset|color|contrast"
+				}
+			},
 			"core/post-featured-image": {
 				"border": {
 					"radius": "var(--jer--preset--round-corners--default)"
