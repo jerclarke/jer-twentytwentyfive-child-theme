@@ -258,6 +258,27 @@
 					"radius": "var(--jer--preset--round-corners--default)"
 				}
 			},
+			"core/quote": {
+				"typography": {
+					"fontWeight": "400"
+				},
+				"border": {
+					"style": "solid",
+					"width": "0 0 0 6px",
+					"color": "var:preset|color|accent-3"
+				},
+				"elements": {
+					"cite": {
+						"color": {
+							"text": "var:preset|color|accent-4"
+						},
+						"typography": {
+							"fontSize": "var:preset|font-size|medium"
+						},
+						"css": "& sub { font-size: 0.65em }"
+					}
+				}
+			},
 			"core/code": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|system-monospace",
