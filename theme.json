@@ -240,6 +240,16 @@
 				"typography": {
 					"fontWeight": "900"
 				}
+			},
+			"caption": {
+				"color": {
+					"text": "var:preset|color|accent-4"
+				},
+				"typography": {
+					"fontSize": "var:preset|font-size|medium",
+					"lineHeight": "1.5"
+				}
+				
 			}
 		},
 		"blocks": {
