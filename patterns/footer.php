@@ -54,19 +54,23 @@
 
 			<!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fit","flexSize":null}},"fontSize":"medium"} -->
 			<p class="has-text-align-left has-medium-font-size">The site was built with <a href="https://wordpress.org">WordPress</a> using a custom child theme of <a href="https://wordpress.org/themes/twentytwentyfive/">Twenty Twenty Five</a></p>
-			<!-- /wp:paragraph --></div>
-		<!-- /wp:group --></div>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+	</div>
 	<!-- /wp:column -->
 
 	<!-- wp:column -->
 	<div class="wp-block-column">
-	<!-- wp:group {"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group">
-		<!-- wp:heading {"level":3} -->
-		<h3 class="wp-block-heading">About Jer</h3>
-		<!-- /wp:heading -->
-		<!-- wp:navigation {"textColor":"accent-1","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} /--></div>
-	<!-- /wp:group --></div>
+		<!-- wp:group {"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group">
+			<!-- wp:heading {"level":3} -->
+			<h3 class="wp-block-heading">About Jer</h3>
+			<!-- /wp:heading -->
+			<!-- wp:navigation {"textColor":"accent-1","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
 	<!-- /wp:column -->
 
 	<!-- wp:column -->
@@ -76,9 +80,12 @@
 			<!-- wp:heading {"level":3} -->
 			<h3 class="wp-block-heading">Blog Categories</h3>
 			<!-- /wp:heading -->
-			<!-- wp:categories {"showPostCounts":true,"style":{"typography":{"lineHeight":"1.8"}},"fontSize":"medium"} /--></div>
-		<!-- /wp:group --></div>
-	<!-- /wp:column --></div>
+			<!-- wp:categories {"showPostCounts":true,"style":{"typography":{"lineHeight":"1.8"}},"fontSize":"medium"} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:column -->
+</div>
 <!-- /wp:columns -->
 
 </div>
