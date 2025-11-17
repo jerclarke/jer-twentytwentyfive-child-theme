@@ -38,27 +38,7 @@
 
 <!-- wp:columns -->
 <div class="wp-block-columns">
-	<!-- wp:column -->
-	<div class="wp-block-column">
-		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group">
-			<!-- wp:heading {"level":3} -->
-			<h3 class="wp-block-heading">Responsibility</h3>
-			<!-- /wp:heading -->
-			<!-- wp:paragraph {"fontSize":"medium"} -->
-			<p class="has-medium-font-size">This website is written and operated by Jer Clarke and licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/ca/">Creative Commons BY-NC-SA</a>.</p>
-			<!-- /wp:paragraph -->
-			<!-- wp:image {"linkDestination":"custom"} -->
-			<figure class="wp-block-image"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/by-nc-sa-ccLicense.png" alt="CC-BY-NC-SA" class=""/></a></figure>
-			<!-- /wp:image -->
 
-			<!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fit","flexSize":null}},"fontSize":"medium"} -->
-			<p class="has-text-align-left has-medium-font-size">The site was built with <a href="https://wordpress.org">WordPress</a> using a custom child theme of <a href="https://wordpress.org/themes/twentytwentyfive/">Twenty Twenty Five</a></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-	</div>
-	<!-- /wp:column -->
 
 	<!-- wp:column -->
 	<div class="wp-block-column">
@@ -81,6 +61,27 @@
 			<h3 class="wp-block-heading">Blog Categories</h3>
 			<!-- /wp:heading -->
 			<!-- wp:categories {"showPostCounts":true,"style":{"typography":{"lineHeight":"1.8"}},"fontSize":"medium"} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:column -->
+	 	<!-- wp:column -->
+	<div class="wp-block-column">
+		<!-- wp:group {"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group">
+			<!-- wp:heading {"level":3} -->
+			<h3 class="wp-block-heading">Responsibility</h3>
+			<!-- /wp:heading -->
+			<!-- wp:paragraph {"fontSize":"medium"} -->
+			<p class="has-medium-font-size">This website is written and operated by Jer Clarke and licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/ca/">Creative Commons BY-NC-SA</a>.</p>
+			<!-- /wp:paragraph -->
+			<!-- wp:image {"linkDestination":"custom"} -->
+			<figure class="wp-block-image"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/by-nc-sa-ccLicense.png" alt="CC-BY-NC-SA" class=""/></a></figure>
+			<!-- /wp:image -->
+
+			<!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fit","flexSize":null}},"fontSize":"medium"} -->
+			<p class="has-text-align-left has-medium-font-size">The site was built with <a href="https://wordpress.org">WordPress</a> using a custom child theme of <a href="https://wordpress.org/themes/twentytwentyfive/">Twenty Twenty Five</a></p>
+			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 	</div>
