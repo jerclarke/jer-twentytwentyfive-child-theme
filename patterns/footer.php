@@ -42,8 +42,8 @@
 	<div class="wp-block-column">
 		<!-- wp:group {"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group">
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}}} -->
-			<h3 class="wp-block-heading" style="font-style:normal;font-weight:800">Responsibility</h3>
+			<!-- wp:heading {"level":3} -->
+			<h3 class="wp-block-heading">Responsibility</h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"fontSize":"medium"} -->
 			<p class="has-medium-font-size">This website is written and operated by Jer Clarke and licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/ca/">Creative Commons BY-NC-SA</a>.</p>
@@ -62,8 +62,8 @@
 	<div class="wp-block-column">
 	<!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group">
-		<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}}} -->
-		<h3 class="wp-block-heading" style="font-style:normal;font-weight:800">Pages</h3>
+		<!-- wp:heading {"level":3} -->
+		<h3 class="wp-block-heading">About Jer</h3>
 		<!-- /wp:heading -->
 		<!-- wp:navigation {"textColor":"accent-1","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} /--></div>
 	<!-- /wp:group --></div>
@@ -73,8 +73,8 @@
 	<div class="wp-block-column">
 	<!-- wp:group {"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group">
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"800"}}} -->
-			<h3 class="wp-block-heading" style="font-style:normal;font-weight:800">Blog Categories</h3>
+			<!-- wp:heading {"level":3} -->
+			<h3 class="wp-block-heading">Blog Categories</h3>
 			<!-- /wp:heading -->
 			<!-- wp:categories {"showPostCounts":true,"style":{"typography":{"lineHeight":"1.8"}},"fontSize":"medium"} /--></div>
 		<!-- /wp:group --></div>
