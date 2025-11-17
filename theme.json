@@ -296,7 +296,7 @@
 				}
 			},
 			"core/site-title": {
-				"css": "text-shadow: clamp(1px, .15vw, 2px) clamp(1px, .15vw, 2px) 0px color-mix(in srgb, var(--wp--preset--color--accent-1) 85%, transparent)",
+				"css": "text-shadow: clamp(1px, .15vw, 2px) clamp(1px, .15vw, 2px) 0px color-mix(in srgb, var(--wp--preset--color--accent-1) 85%, transparent);",
 				"elements": {
 					"link": {
 						"spacing": {
@@ -306,12 +306,8 @@
 							}
 						},
 						":hover": {
-							"color": {
-								"background": "var:preset|color|accent-1",
-								"text": "var:preset|color|base"
-							},
 							"typography": {
-								"textDecoration": "none"
+								"textDecoration": "underline"
 							}
 						},
 						"typography": {

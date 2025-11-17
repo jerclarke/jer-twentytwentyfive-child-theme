@@ -28,7 +28,6 @@ body {
 	text-wrap: pretty;
 }
 
-
 /* https://wordpress.stackexchange.com/questions/431775/how-can-i-change-the-background-color-of-the-built-in-navigation-modal-of-wordpr/431776#431776 */
 :root.has-modal-open {
 	--wp--preset--color--base: var(--wp--preset--color--accent-1);
@@ -54,6 +53,11 @@ body {
 .wp-block-query .wp-block-post-title,
 .wp-block-media-text * {
 	text-wrap: balance;
+}
+
+/* For some wild reason parent theme marks 1px as !important */
+.wp-block-site-title a {
+	text-decoration-thickness: 5px !important;
 }
 
 /* Media & Text block is foolish, remove 8% side padding on text section and replace with sensible gap */
