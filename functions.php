@@ -19,6 +19,16 @@ function jer_2025_action_wp_enqueue_scripts_to_enqueue_style_css() {
 add_action( 'wp_enqueue_scripts', 'jer_2025_action_wp_enqueue_scripts_to_enqueue_style_css' );
 
 /**
+ * Enable excerpts on pages
+ *
+ * @return void
+ */
+function jer_2025_add_excerpts_to_pages() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'jer_2025_add_excerpts_to_pages' );
+
+/**
  * Get FSE template code for our standard pagination block
  *
  * Note I tried extracting this as a /patterns/ but the query wasn't set up
