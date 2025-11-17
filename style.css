@@ -50,6 +50,11 @@ body {
 	margin-top: 1em;
 }
 
+/* Fix issue where header menu links weren't purple on hover */
+:root:not(.has-modal-open) .wp-block-navigation a:hover {
+	color: var(--wp--preset--color--accent-1) !important; /* Change to your desired color */
+}
+
 .wp-block-query .wp-block-post-title,
 .wp-block-media-text * {
 	text-wrap: balance;
