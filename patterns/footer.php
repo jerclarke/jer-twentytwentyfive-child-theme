@@ -76,7 +76,7 @@
 			<p class="has-medium-font-size">This website is written and operated by Jer Clarke and licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/ca/">Creative Commons BY-NC-SA</a>.</p>
 			<!-- /wp:paragraph -->
 			<!-- wp:image {"linkDestination":"custom"} -->
-			<figure class="wp-block-image"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/by-nc-sa-ccLicense.png" alt="CC-BY-NC-SA" class=""/></a></figure>
+			<figure class="wp-block-image"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/by-nc-sa-ccLicense.png" alt="CC-BY-NC-SA" loading='lazy'/></a></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:paragraph {"align":"left","style":{"layout":{"selfStretch":"fit","flexSize":null}},"fontSize":"medium"} -->
