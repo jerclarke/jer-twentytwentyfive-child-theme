@@ -50,6 +50,15 @@ body {
 	margin-top: 1em;
 }
 
+/* We set top-padding on headings inside posts in theme.json, but we only want it for flow between text items */
+:root :where(.wp-block-post-content h2):first-child,
+:root :where(.wp-block-post-content h3):first-child,
+:root :where(.wp-block-post-content h4):first-child,
+:root :where(.wp-block-post-content h5):first-child,
+:root :where(.wp-block-post-content h6):first-child {
+    padding-top: 0;
+}
+
 /* Fix issue where header menu links weren't purple on hover */
 :root:not(.has-modal-open) .wp-block-navigation a:hover {
 	color: var(--wp--preset--color--accent-1) !important; /* Change to your desired color */
