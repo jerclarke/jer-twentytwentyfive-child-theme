@@ -2,7 +2,6 @@
 /**
  * Title: Jer Widget Grid
  * Slug: jer-twentytwentyfive-child-theme/jer-widget-grid
- * Inserter: no
  */
 ?>
 
