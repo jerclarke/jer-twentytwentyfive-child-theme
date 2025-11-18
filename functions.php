@@ -29,6 +29,64 @@ function jer_2025_add_excerpts_to_pages() {
 add_action( 'init', 'jer_2025_add_excerpts_to_pages' );
 
 /**
+ * Filter lazy loading to disable it for intro images on homepage
+ * 
+ * @link https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/
+ * 
+ * @param bool $default Whether to add loading=lazy to this image
+ * @param string $tag_name img or iframe
+ * @param string $context Parent context with idiosyncratic values like template_part_* and the_content
+ * @return void
+ */
+function jer_filter_wp_lazy_loading_enabled_to_disable_in_homepage_widgets( $default, $tag_name, $context ) {
+
+	// Only apply this on first page of is_home where about blocks are at the top
+	if (!is_home() OR is_paged()) {
+		return $default;
+	}
+
+	// For some reason we have to filter on both template_part_uncategorized AND the_content to get the inserted page content images to not have loading=lazy, just one or the other doesn't do it!
+	if ( "template_part_uncategorized" === $context && 'img' === $tag_name) {
+		return false;
+	}
+	if ( "the_content" === $context && 'img' === $tag_name) {
+		return false;
+	}
+
+	// Note I tried to disable lazy loading for the "Latest blog posts" using this filter, but it didn't work, seemingly because the "omit" threshhold takes precedence, so we have the filter below to filter the omit threshhold more explicitly.
+	// if ( "the_post_thumbnail" === $context && 'img' === $tag_name) {
+	// 	return true;
+	// }
+
+	return $default;
+}
+add_filter('wp_lazy_loading_enabled','jer_filter_wp_lazy_loading_enabled_to_disable_in_homepage_widgets', 1, 3);
+
+/**
+ * Filter lazy loading threshhold to make it zero on homepage because we already have our non-lazy-loaded images in the "widgets"
+ *
+ * By default the first $omit_threshhold images skip having loading=lazy added
+ * On the homepage this only applies to the "Latest blog posts" section, not images 
+ * embedded in the "widgets" area above the main query. 
+ * Because the filter above manually removes loading=lazy from the "widgets" area, we
+ * use this filter to make sure all of the blog posts have loading=lazy.
+ * 
+ * @link https://make.wordpress.org/core/2021/12/29/enhanced-lazy-loading-performance-in-5-9/
+ * 
+ * @param int $omit_threshold How many images to skip loading=lazy on, assuming they are initially visible
+ * @return void
+ */
+function jer_filter_wp_omit_loading_attr_threshold_to_disable_on_homepage( $omit_threshold ) {
+    
+	if (!is_home() OR is_paged()) {
+		return $omit_threshold;
+	}
+
+	return 0;
+}
+add_filter( 'wp_omit_loading_attr_threshold', 'jer_filter_wp_omit_loading_attr_threshold_to_disable_on_homepage' );
+
+/**
  * Get FSE template code for our standard pagination block
  *
  * Note I tried extracting this as a /patterns/ but the query wasn't set up
