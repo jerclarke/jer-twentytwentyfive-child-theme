@@ -9,8 +9,8 @@
 <!-- wp:template-part {"slug":"header"} /-->
 <!-- wp:group -->
 <div class="wp-block-group jer-intro-header-container">
-	<!-- wp:template-part {"slug":"jer-intro"} /-->
-	<!-- wp:template-part {"slug":"jer-widget-grid"} /-->
+	<!-- wp:template-part {"slug":"jer-about-page-content"} /-->
+	<!-- wp:template-part {"slug":"jer-widgets-page-content"} /-->
 </div>
 <!-- /wp:group -->
 

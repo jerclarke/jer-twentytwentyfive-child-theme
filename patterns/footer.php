@@ -11,7 +11,7 @@
 
 <!-- wp:group -->
 <div class="wp-block-group jer-intro-footer-container">
-	<!-- wp:template-part {"slug":"jer-intro"} /-->
+	<!-- wp:template-part {"slug":"jer-about-page-content"} /-->
 </div>
 <!-- /wp:group -->
 
