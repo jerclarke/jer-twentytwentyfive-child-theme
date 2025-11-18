@@ -29,62 +29,66 @@ function jer_2025_add_excerpts_to_pages() {
 add_action( 'init', 'jer_2025_add_excerpts_to_pages' );
 
 /**
- * Filter lazy loading to disable it for intro images on homepage
+ * Filter loading=lazy and fetchpriority=high behavior on homepage to ensure the "widgets" are included in the logic
  * 
+ * WP core has logic to add loading=lazy to all but the first three images on the page, and 
+ * to add fetchpriority=high to the first "large" image on the page. 
+ * 
+ * That logic doesn't work for the homepage in our theme setup, because the "widget" areas, 
+ * i.e. the page content inserted by jer-about-page-content.html and jer-widgets-page-content.html
+ * are never considered for this treatment, without this filter the images in them are always lazy 
+ * loaded and never get the fetchpriority flag. 
+ * 
+ * So this filter manually corrects the the $lading_attrs for lazy and fetchpriority on the 
+ * homepage, ensuring our "widget" images are given priority as well as making the featured 
+ * images on blog posts below get loading=lazy and NOT fetchpriority
+ * 
+ * We must use the newest version of the filter from 6.3 so we can do all of this in one function.
+ * 
+ * @link https://make.wordpress.org/core/2023/07/13/image-performance-enhancements-in-wordpress-6-3/
+ * @link https://make.wordpress.org/core/2021/12/29/enhanced-lazy-loading-performance-in-5-9/
  * @link https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/
  * 
- * @param bool $default Whether to add loading=lazy to this image
+ * @param array $loading_attrs Performance related values that will be merged into the image to be shown
  * @param string $tag_name img or iframe
- * @param string $context Parent context with idiosyncratic values like template_part_* and the_content
- * @return void
+ * @param array $attr [src, width, height, loading, fetchpriority, decoding]
+ * @param string $context Idiosyncratic description of the calling context e.g. the_content, template_part_*, the_post_thumbnail
+ * @return array
  */
-function jer_filter_wp_lazy_loading_enabled_to_disable_in_homepage_widgets( $default, $tag_name, $context ) {
-
-	// Only apply this on first page of is_home where about blocks are at the top
-	if (!is_home() OR is_paged()) {
-		return $default;
-	}
-
-	// For some reason we have to filter on both template_part_uncategorized AND the_content to get the inserted page content images to not have loading=lazy, just one or the other doesn't do it!
-	if ( "template_part_uncategorized" === $context && 'img' === $tag_name) {
-		return false;
-	}
-	if ( "the_content" === $context && 'img' === $tag_name) {
-		return false;
-	}
-
-	// Note I tried to disable lazy loading for the "Latest blog posts" using this filter, but it didn't work, seemingly because the "omit" threshhold takes precedence, so we have the filter below to filter the omit threshhold more explicitly.
-	// if ( "the_post_thumbnail" === $context && 'img' === $tag_name) {
-	// 	return true;
-	// }
-
-	return $default;
-}
-add_filter('wp_lazy_loading_enabled','jer_filter_wp_lazy_loading_enabled_to_disable_in_homepage_widgets', 1, 3);
-
-/**
- * Filter lazy loading threshhold to make it zero on homepage because we already have our non-lazy-loaded images in the "widgets"
- *
- * By default the first $omit_threshhold images skip having loading=lazy added
- * On the homepage this only applies to the "Latest blog posts" section, not images 
- * embedded in the "widgets" area above the main query. 
- * Because the filter above manually removes loading=lazy from the "widgets" area, we
- * use this filter to make sure all of the blog posts have loading=lazy.
- * 
- * @link https://make.wordpress.org/core/2021/12/29/enhanced-lazy-loading-performance-in-5-9/
- * 
- * @param int $omit_threshold How many images to skip loading=lazy on, assuming they are initially visible
- * @return void
- */
-function jer_filter_wp_omit_loading_attr_threshold_to_disable_on_homepage( $omit_threshold ) {
+function jer_filter_wp_get_loading_optimization_attributes_to_insert_fetchpriority($loading_attrs, $tag_name, $attr, $context) {
     
-	if (!is_home() OR is_paged()) {
-		return $omit_threshold;
+	// Only apply this on first page of is_home where the "widget" template parts show above posts
+	if ( !is_home() OR is_paged() ) {
+		return $loading_attrs;
 	}
 
-	return 0;
+	// "Uncategorized" context targets our custom "widget" template parts, everything in there should not lazy load and the first image should have fetchpriority
+	if ( "template_part_uncategorized" === $context && 'img' === $tag_name ) {
+		
+		$loading_attrs['loading'] = false;
+		
+		if (!isset($GLOBALS["jer_2025_fetchpriority_inserted"])) {
+			$loading_attrs['fetchpriority'] = 'high';
+			$GLOBALS["jer_2025_fetchpriority_inserted"] = true;
+		}
+	}
+
+	// For some reason we have to filter on both template_part_uncategorized AND the_content to get the "widget" images to not lazy load, just one or the other doesn't do it!
+	if ( "the_content" === $context && 'img' === $tag_name) {
+		
+		$loading_attrs['loading'] = false;
+	}
+
+	// Disable the "omission" of the first three blog featured images from lazy loading, and ensure the first one doesn't get fetchpriority
+	if ( "the_post_thumbnail" === $context && 'img' === $tag_name) {
+		
+		$loading_attrs['loading'] = 'lazy';
+		$loading_attrs['fetchpriority'] = false;
+	}
+
+	return $loading_attrs;
 }
-add_filter( 'wp_omit_loading_attr_threshold', 'jer_filter_wp_omit_loading_attr_threshold_to_disable_on_homepage' );
+add_filter("wp_get_loading_optimization_attributes", "jer_filter_wp_get_loading_optimization_attributes_to_insert_fetchpriority", 10, 4);
 
 /**
  * Get FSE template code for our standard pagination block
