@@ -122,12 +122,3 @@ function jer_2025_get_pagination_fse_format() {
  * https://jetpack.com/support/create-better-content-with-jetpack-ai/#how-to-disable-jetpack-ai-assistant
  */
 add_filter( 'jetpack_ai_enabled', '__return_false' );
-
-/**
- * Disable AIOSEOP AI buttons
- * 
- * https://wordpress.org/support/topic/how-to-disable-generate-with-ai-button-next-to-featured-image/#post-18694507
- */
-add_filter('aioseo_ai_image_generator_extend_image_block_toolbar', '__return_false');
-add_filter('aioseo_ai_image_generator_extend_image_block_placeholder', '__return_false');
-add_filter('aioseo_ai_image_generator_extend_featured_image_button', '__return_false');
