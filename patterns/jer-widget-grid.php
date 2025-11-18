@@ -2,6 +2,10 @@
 /**
  * Title: Jer Widget Grid
  * Slug: jer-twentytwentyfive-child-theme/jer-widget-grid
+ * 
+ * @package WordPress
+ * @subpackage Twenty_Twenty_Five
+ * @since Twenty Twenty-Five 1.0
  */
 ?>
 
