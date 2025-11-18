@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Tight Line-Height",
+	"slug": "text-tight",
+	"blockTypes": ["core/heading", "core/paragraph", "core/list", "core/quote"],
+	"styles": {
+		"typography": {
+			"lineHeight": "1.5"
+		}
+	}
+}
