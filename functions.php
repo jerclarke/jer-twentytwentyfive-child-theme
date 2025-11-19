@@ -18,6 +18,7 @@ function jer_2025_action_wp_enqueue_scripts_to_enqueue_style_css(): void {
 		'jer-twentytwentyfive-child-theme',
 		get_stylesheet_uri(),
 		array(),
+		// @phpstan-ignore argument.type (->get() can output non-strings but not for 'Version')
 		wp_get_theme()->get( 'Version' )
 	);
 }

@@ -1,6 +1,6 @@
 parameters:
     # A level must be specified here or else with every command
-    level: 6
+    level: 10
     # Don't analyze /vendor/ dir (though it will be scanned)
     excludePaths:
         - vendor/
