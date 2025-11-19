@@ -12,7 +12,8 @@
  *
  * @since 1.0.0
  */
-function jer_2025_action_wp_enqueue_scripts_to_enqueue_style_css() {
+function jer_2025_action_wp_enqueue_scripts_to_enqueue_style_css(): void {
+
 	wp_enqueue_style(
 		'jer-twentytwentyfive-child-theme',
 		get_stylesheet_uri(),
@@ -53,13 +54,13 @@ add_action( 'init', 'jer_2025_add_excerpts_to_pages' );
  * @link https://make.wordpress.org/core/2021/12/29/enhanced-lazy-loading-performance-in-5-9/
  * @link https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/
  *
- * @param array  $loading_attrs Performance related values that will be merged into the image to be shown.
- * @param string $tag_name img or iframe.
- * @param array  $attr [src, width, height, loading, fetchpriority, decoding].
- * @param string $context Idiosyncratic description of the calling context e.g. the_content, template_part_*, the_post_thumbnail.
- * @return array
+ * @param array<mixed> $loading_attrs Performance related values that will be merged into the image to be shown.
+ * @param string       $tag_name img or iframe.
+ * @param array<mixed> $attr [src, width, height, loading, fetchpriority, decoding].
+ * @param string       $context Idiosyncratic description of the calling context e.g. the_content, template_part_*, the_post_thumbnail.
+ * @return array<mixed>
  */
-function jer_filter_wp_get_loading_optimization_attributes_to_insert_fetchpriority( $loading_attrs, $tag_name, $attr, $context ) {
+function jer_filter_wp_get_loading_optimization_attributes_to_insert_fetchpriority( array $loading_attrs, string $tag_name, array $attr, string $context ): array {
 
 	// Only apply this on first page of is_home where the "widget" template parts show above posts.
 	if ( ! is_home() || is_paged() ) {
