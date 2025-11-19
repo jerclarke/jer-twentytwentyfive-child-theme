@@ -12,6 +12,7 @@
         }
     },
     "require-dev": {
-        "wp-coding-standards/wpcs": "^3.0"
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpstan/phpstan": "^2.1"
     }
 }
