@@ -6,7 +6,12 @@
  * Block Types: core/template-part/footer
  * Description: Jer's custom footer with search, responsibility, pages, and categories
  * Inserter: no
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_Five
+ * @since Twenty Twenty-Five 1.0
  */
+
 ?>
 
 <!-- wp:group -->
@@ -65,7 +70,7 @@
 		<!-- /wp:group -->
 	</div>
 	<!-- /wp:column -->
-	 	<!-- wp:column -->
+	<!-- wp:column -->
 	<div class="wp-block-column">
 		<!-- wp:group {"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group">

@@ -2,11 +2,12 @@
 /**
  * Title: Jer Widget Grid
  * Slug: jer-twentytwentyfive-child-theme/jer-widget-grid
- * 
+ *
  * @package WordPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
+
 ?>
 
 <!-- wp:group {"className":"wp-block-group-is-layout-constrained","layout":{"type":"constrained"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->

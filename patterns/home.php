@@ -3,6 +3,10 @@
  * Title: Jer's default home template with intro and widget grid
  * Slug: jer-twentytwentyfive-child-theme/home
  * Inserter: no
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_Five
+ * @since Twenty Twenty-Five 1.0
  */
 
 ?>
