@@ -16,6 +16,57 @@ GitHub Theme URI: https://github.com/jerclarke/jer-twentytwentyfive-child-theme
 Tags:
 */
 
+/**
+ * Dark mode toggle CSS
+ * 
+ * This should work with or without the dark-mode-toggle-block, but with it enabled
+ * the complex code below ensures that dark mode shows by default based on user 
+ * preference, but the switch still inverts it back to light mode.
+ * 
+ * If deploying this without the switch, we'd just need the bottom section to 
+ * Set all the CSS vars on body when @media (prefers-color-scheme: dark) 
+ * 
+ * @see https://github.com/richtabor/dark-mode-toggle-block/issues/17
+ */
+
+/* Hide switch by default so old browsers without prefers-color-scheme see nothing */
+.wp-block-tabor-dark-mode-toggle {
+	display: none;
+}
+/* In light default mode clicking the switch enables the dark colors */
+@media (prefers-color-scheme: light) {
+	.wp-block-tabor-dark-mode-toggle {
+		display: block;
+	}
+	:root.theme-dark body {
+		--wp--preset--color--base: var(--wp--preset--color--base-dark);
+		--wp--preset--color--contrast: var(--wp--preset--color--contrast-dark);
+		--wp--preset--color--accent-1: var(--wp--preset--color--accent-1-dark);
+		--wp--preset--color--accent-2: var(--wp--preset--color--accent-2-dark);
+		--wp--preset--color--accent-3: var(--wp--preset--color--accent-3-dark);
+		--wp--preset--color--accent-4: var(--wp--preset--color--accent-4-dark);
+		--wp--preset--color--accent-5: var(--wp--preset--color--accent-5-dark);
+		--wp--preset--color--accent-6: var(--wp--preset--color--accent-6-dark);
+	}
+}
+/* In dark default the switch is inverted with :not, so the dark colors apply as long as 
+the switch is NOT clicked, and clicking the switch reverts the colors to light mode */
+@media (prefers-color-scheme: dark) {
+	.wp-block-tabor-dark-mode-toggle {
+		display: block;
+	}
+	:root:not(.theme-dark) body {
+		--wp--preset--color--base: var(--wp--preset--color--base-dark);
+		--wp--preset--color--contrast: var(--wp--preset--color--contrast-dark);
+		--wp--preset--color--accent-1: var(--wp--preset--color--accent-1-dark);
+		--wp--preset--color--accent-2: var(--wp--preset--color--accent-2-dark);
+		--wp--preset--color--accent-3: var(--wp--preset--color--accent-3-dark);
+		--wp--preset--color--accent-4: var(--wp--preset--color--accent-4-dark);
+		--wp--preset--color--accent-5: var(--wp--preset--color--accent-5-dark);
+		--wp--preset--color--accent-6: var(--wp--preset--color--accent-6-dark);
+	}
+}
+
 /* Seems there's no way to alter the breakpoints where columns switch from 3 to 1, this raises it from 600 to 100 for post grids */
 @media (max-width: 1000px) {
 	.wp-block-post-template-is-layout-grid {
