@@ -51,6 +51,46 @@
 					"color": "color-mix(in srgb, currentColor 20%, transparent)",
 					"name": "Accent 6",
 					"slug": "accent-6"
+				},
+				{
+					"color": "#000000",
+					"name": "Base dark",
+					"slug": "base-dark"
+				},
+					{
+					"color": "#ffffff",
+					"name": "Contrast dark",
+					"slug": "contrast-dark"
+				},
+				{
+					"color": "#a06aff",
+					"name": "Accent 1 dark",
+					"slug": "accent-1-dark"
+				},
+				{
+					"color": "#311f53",
+					"name": "Accent 2 dark",
+					"slug": "accent-2-dark"
+				},
+				{
+					"color": "#222222",
+					"name": "Accent 3 dark",
+					"slug": "accent-3-dark"
+				},
+				{
+					"color": "#9a9a9a",
+					"name": "Accent 4 dark",
+					"slug": "accent-4-dark"
+				},
+				{
+					"color": "#213118",
+					"name": "Accent 5 dark",
+					"slug": "accent-5-dark"
+				},
+				{
+					"color": "color-mix(in srgb, currentColor 20%, transparent)",
+					"name": "Accent 6 dark",
+					"slug": "accent-6-dark"
 				}
 			]
 		},
