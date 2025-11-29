@@ -67,6 +67,26 @@ the switch is NOT clicked, and clicking the switch reverts the colors to light m
 	}
 }
 
+/* Make the dark mode toggle less wide */
+.wp-block-tabor-dark-mode-toggle__track {
+    width: calc(var(--icon-size) * 2);
+}
+.theme-dark .wp-block-tabor-dark-mode-toggle__input+.wp-block-tabor-dark-mode-toggle__track .wp-block-tabor-dark-mode-toggle__selector {
+    transform: translateX(calc(var(--icon-size) * 00.8));
+}
+/* Fix weird spacing of icon inside it's track, which was too low at wide window widths */
+.wp-block-tabor-dark-mode-toggle__icon, .wp-block-tabor-dark-mode-toggle__icon svg {
+    height: calc(var(--icon-size) + 4px);
+}
+
+/* Disabled - This makes the modal dark purple background with white text, rather than light purple with black text, as happens naturally with dark mode inversion. Would need extra work to make it work with the switcher though, and I think maybe I like the light purple anyway. Explanation of how it works (originally thought I needed this just to control the modal, but turns out I could control the main background/text colors with overlayBackgroundColor and overlayTextColor): @link https://wordpress.stackexchange.com/questions/431775/how-can-i-change-the-background-color-of-the-built-in-navigation-modal-of-wordpr/431776#431776   */
+/* @media (prefers-color-scheme: dark) {
+	:root.has-modal-open {
+		--wp--preset--color--base-dark: var(--wp--preset--color--contrast-dark);
+		--wp--preset--color--accent-1-dark: var(--wp--preset--color--accent-2-dark);
+	}
+} */
+
 /* Seems there's no way to alter the breakpoints where columns switch from 3 to 1, this raises it from 600 to 100 for post grids */
 @media (max-width: 1000px) {
 	.wp-block-post-template-is-layout-grid {
@@ -79,10 +99,11 @@ body {
 	text-wrap: pretty;
 }
 
-/* https://wordpress.stackexchange.com/questions/431775/how-can-i-change-the-background-color-of-the-built-in-navigation-modal-of-wordpr/431776#431776 */
-:root.has-modal-open {
-	--wp--preset--color--base: var(--wp--preset--color--accent-1);
-	--wp--preset--color--contrast: #fff;
+/* Modal is purple with white text, but the SVG icons can't be modified within the overlay
+so we specify them as white here only when modal is open */
+:root.has-modal-open .wp-block-social-links svg,
+:root.has-modal-open .wp-block-social-links a svg {
+	color: var(--wp--preset--color--base) !important;
 }
 
 /* Tweak modal menu style to have big text and sensible spacing on sub-lists */
@@ -100,7 +121,7 @@ body {
 	padding-top: 0;
 	padding-left: 0;
 	padding-right: 1em;
-	border-right: 3px solid white;
+	border-right: 3px solid var(--wp--preset--color--base);
 	margin-top: 1em;
 }
 
