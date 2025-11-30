@@ -19,7 +19,7 @@
 
 <?php
 if ( is_paged() ) {
-	echo esc_html( jer_2025_get_pagination_fse_format() );
+	echo jer_2025_get_pagination_fse_format();
 }
 ?>
 
