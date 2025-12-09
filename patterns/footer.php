@@ -80,6 +80,8 @@
 			<!-- wp:paragraph {"fontSize":"medium"} -->
 			<p class="has-medium-font-size">This website is written and operated by Jer Clarke and licensed as <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/ca/">Creative Commons BY-NC-SA</a>.</p>
 			<!-- /wp:paragraph -->
+
+<?php // About the permanent error attached to this image in the Site Editor: https://github.com/WordPress/gutenberg/discussions/41475#discussioncomment-15201080 . ?>
 			<!-- wp:image {"linkDestination":"custom"} -->
 			<figure class="wp-block-image"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/by-nc-sa-ccLicense.png" alt="CC-BY-NC-SA" width="525" height="124" /></a></figure>
 			<!-- /wp:image -->
