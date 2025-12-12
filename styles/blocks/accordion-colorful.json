@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Colorful Accordion",
+	"slug": "accordion-colorful",
+	"blockTypes": ["core/accordion"],
+	"styles": {
+		"spacing": {
+			"blockGap": "0"
+		},
+		"blocks": {
+			"core/accordion-item": {
+				"color": {
+				},
+				"spacing": {
+					"padding": {
+						"top": "0",
+						"bottom": "0",
+						"right": "0",
+						"left": "0"
+					},
+					"margin": {
+						"bottom": "var:preset|spacing|30"
+					}
+				}
+			},
+			"core/accordion-heading": {
+				"css": " &__toggle {padding-top: var(--wp--preset--spacing--30) !important} &__toggle:hover {padding-top: var(--wp--preset--spacing--30) !important}",
+
+				"color": {
+					"background": "var:preset|color|accent-1",
+					"text": "var:preset|color|base"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var:preset|spacing|20",
+						"bottom": "var:preset|spacing|20",
+						"right": "var:preset|spacing|30",
+						"left": "var:preset|spacing|30"
+					},
+					"blockGap": "0"
+				}
+			},
+			"core/accordion-panel": {
+				"spacing": {
+					"padding": {
+						"top": "var:preset|spacing|20",
+						"bottom": "var:preset|spacing|20",
+						"right": "var:preset|spacing|30",
+						"left": "var:preset|spacing|30"
+					}
+				}
+			}
+		}
+	}
+}
