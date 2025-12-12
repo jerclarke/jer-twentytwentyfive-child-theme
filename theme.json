@@ -334,6 +334,14 @@
 					"background": "var:preset|color|accent-3"
 				},
 				"spacing": {
+					"blockGap": "0"
+				}
+			},
+			"core/accordion-heading": {
+				"css": "/*Core has weird hover spacing, so we specify this here to make sure it never jumps around*/ &__toggle {padding-top: var(--wp--preset--spacing--30) !important} &__toggle:hover {padding-top: var(--wp--preset--spacing--30) !important}",
+				"color": {
+				},
+				"spacing": {
 					"padding": {
 						"top": "var:preset|spacing|20",
 						"bottom": "var:preset|spacing|20",
@@ -341,6 +349,15 @@
 						"left": "var:preset|spacing|30"
 					},
 					"blockGap": "0"
+				}
+			},
+			"core/accordion-panel": {
+				"spacing": {
+					"padding": {
+						"bottom": "var:preset|spacing|30",
+						"right": "var:preset|spacing|30",
+						"left": "var:preset|spacing|30"
+					}
 				}
 			},
 			"core/post-featured-image": {
