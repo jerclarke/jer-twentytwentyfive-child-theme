@@ -289,7 +289,6 @@
 					"fontSize": "var:preset|font-size|medium",
 					"lineHeight": "1.5"
 				}
-				
 			}
 		},
 		"blocks": {
@@ -328,6 +327,20 @@
 				"color": {
 					"background": "var:preset|color|accent-3",
 					"text": "var:preset|color|contrast"
+				}
+			},
+			"core/accordion-item": {
+				"color": {
+					"background": "var:preset|color|accent-3"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var:preset|spacing|20",
+						"bottom": "var:preset|spacing|20",
+						"right": "var:preset|spacing|30",
+						"left": "var:preset|spacing|30"
+					},
+					"blockGap": "0"
 				}
 			},
 			"core/post-featured-image": {
