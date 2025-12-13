@@ -25,6 +25,29 @@ function jer_2025_action_wp_enqueue_scripts_to_enqueue_style_css(): void {
 add_action( 'wp_enqueue_scripts', 'jer_2025_action_wp_enqueue_scripts_to_enqueue_style_css' );
 
 /**
+ * Enqueue various block stylesheets from /assets/css
+ *
+ * Kept as an example even though we could live without it!
+ * Applied to the parent accordion block rather than title block for convenience.
+ *
+ * @link https://developer.wordpress.org/news/2025/10/styling-accordions-in-wordpress-6-9/
+ *
+ * @return void
+ */
+function jer_2025_enqueue_block_styles(): void {
+
+	wp_enqueue_block_style(
+		'core/media-text',
+		array(
+			'handle' => 'jer-2025-block-media-text',
+			'src'    => get_theme_file_uri( 'assets/css/block-media-text.css' ),
+			'path'   => get_theme_file_path( 'assets/css/block-media-text.css' ),
+		)
+	);
+}
+add_action( 'init', 'jer_2025_enqueue_block_styles' );
+
+/**
  * Enable excerpts on pages
  *
  * @return void

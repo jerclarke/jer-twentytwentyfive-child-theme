@@ -1,0 +1,16 @@
+/* CSS that applies only to the media-text block, enqueued using wp_enqueue_block_style() in functions.php - Inspiration: https://developer.wordpress.org/news/2025/10/styling-accordions-in-wordpress-6-9/ */
+
+/* Media & Text block is foolish, remove 8% side padding on text section and replace with sensible gap */
+.wp-block-media-text>.wp-block-media-text__media {
+	align-self: start;
+}
+.wp-block-media-text {
+	gap: clamp(1.5rem, 4vw, 4rem);
+}
+.wp-block-media-text>.wp-block-media-text__content {
+	padding-left: 0;
+	padding-right: 0;
+}
+.wp-block-media-text>.wp-block-media-text__content p:first-child {
+	margin-block-start: 0;
+}

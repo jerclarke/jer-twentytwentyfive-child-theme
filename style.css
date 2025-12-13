@@ -164,21 +164,6 @@ so we specify them as white here only when modal is open */
 	text-decoration-thickness: 5px !important;
 }
 
-/* Media & Text block is foolish, remove 8% side padding on text section and replace with sensible gap */
-.wp-block-media-text>.wp-block-media-text__media {
-	align-self: start;
-}
-.wp-block-media-text {
-	gap: clamp(1.5rem, 4vw, 4rem);
-}
-.wp-block-media-text>.wp-block-media-text__content {
-	padding-left: 0;
-	padding-right: 0;
-}
-.wp-block-media-text>.wp-block-media-text__content p:first-child {
-	margin-block-start: 0;
-}
-
 /* Comments styles because I don't want to override the template and there's nothing to hook into for each .comment */
 .wp-block-comments-query-loop {
 	margin-top: var(--wp--preset--spacing--50) !important;
