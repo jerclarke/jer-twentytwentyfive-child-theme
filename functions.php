@@ -86,6 +86,11 @@ add_action( 'init', 'jer_2025_add_excerpts_to_pages' );
  */
 function jer_filter_wp_get_loading_optimization_attributes_to_insert_fetchpriority( array $loading_attrs, string $tag_name, array $attr, string $context ): array {
 
+	if ( 'template_part_footer' === $context ) {
+		$loading_attrs['loading'] = 'lazy';
+		return $loading_attrs;
+	}
+
 	// Only apply this on first page of is_home where the "widget" template parts show above posts.
 	if ( ! is_home() || is_paged() ) {
 		return $loading_attrs;
