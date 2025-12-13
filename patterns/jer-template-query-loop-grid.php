@@ -22,8 +22,8 @@ if ( is_paged() ) {
 ?>
 
 	<!-- wp:post-template {"fontSize":"tiny","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
-		<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"accent-3","layout":{"type":"constrained","justifyContent":"center"}} -->
-		<div class="wp-block-group jer-query-loop-grid-item jer-rounded-group has-accent-3-background-color has-background" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
+		<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"accent-1","layout":{"type":"constrained","justifyContent":"center"}} -->
+		<div class="wp-block-group jer-query-loop-grid-item jer-rounded-group has-accent-1-background-color has-background" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
 			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"spacing":{"margin":{"top":"0px","bottom":"var:preset|spacing|30"}}}} /-->
 
 			<!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
@@ -34,8 +34,8 @@ if ( is_paged() ) {
 	<!-- /wp:post-template -->
 	 
 	<!-- wp:query-no-results -->
-		<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"accent-3","layout":{"type":"constrained","justifyContent":"center"}} -->
-		<div class="wp-block-group  has-accent-3-background-color has-background" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
+		<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"accent-1","layout":{"type":"constrained","justifyContent":"center"}} -->
+		<div class="wp-block-group  has-accent-1-background-color has-background" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)">
 			<!-- wp:paragraph -->
 			<p><?php echo esc_html_x( 'Sorry, no posts to show.', 'Message explaining that there are no results returned from a search.', 'twentytwentyfive' ); ?></p>
 			<!-- /wp:paragraph -->

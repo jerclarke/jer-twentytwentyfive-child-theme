@@ -11,7 +11,7 @@
 		"blocks": {
 			"core/accordion-heading": {
 				"color": {
-					"background": "var:preset|color|accent-1",
+					"background": "var:preset|color|accent-3",
 					"text": "var:preset|color|base"
 				}
 			},

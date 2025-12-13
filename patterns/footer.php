@@ -20,8 +20,8 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"categories":["footer"],"patternName":"twentytwentyfive/footer","name":"Footer"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"},"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|50"}}},"backgroundColor":"accent-3","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-accent-3-background-color has-background" style="margin-top:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:group {"metadata":{"categories":["footer"],"patternName":"twentytwentyfive/footer","name":"Footer"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"},"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|50"}}},"backgroundColor":"accent-1","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-accent-1-background-color has-background" style="margin-top:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50)">
 	
 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide">
@@ -52,7 +52,7 @@
 			<!-- wp:heading {"level":3} -->
 			<h3 class="wp-block-heading">About Jer</h3>
 			<!-- /wp:heading -->
-			<!-- wp:navigation {"textColor":"accent-1","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} /-->
+			<!-- wp:navigation {"textColor":"accent-3","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} /-->
 		</div>
 		<!-- /wp:group -->
 	</div>
