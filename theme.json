@@ -57,13 +57,13 @@
 					"name": "Base dark",
 					"slug": "base-dark"
 				},
-					{
+				{
 					"color": "#ffffff",
 					"name": "Contrast dark",
 					"slug": "contrast-dark"
 				},
 				{
-					"color": "#a06aff",
+					"color": "#ab81f6",
 					"name": "Accent 1 dark",
 					"slug": "accent-1-dark"
 				},
