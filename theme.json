@@ -1,12 +1,7 @@
 {
-	"version": 3,
 	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
 	"settings": {
-		"layout": {
-			"contentSize": "800px",
-			"wideSize": "1100px",
-			"allowEditing": true
-		},
 		"color": {
 			"defaultDuotone": false,
 			"defaultGradients": false,
@@ -93,6 +88,11 @@
 					"slug": "accent-6-dark"
 				}
 			]
+		},
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1100px",
+			"allowEditing": true
 		},
 		"spacing": {
 			"defaultSpacingSizes": false,
