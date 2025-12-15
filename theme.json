@@ -48,6 +48,16 @@
 					"slug": "accent-6"
 				},
 				{
+					"color": "#7f39fa",
+					"name": "Menu base",
+					"slug": "menu-base"
+				},
+				{
+					"color": "#ffffff",
+					"name": "Menu contrast",
+					"slug": "menu-contrast"
+				},
+				{
 					"color": "#000000",
 					"name": "Base dark",
 					"slug": "base-dark"
@@ -86,6 +96,16 @@
 					"color": "color-mix(in srgb, currentColor 20%, transparent)",
 					"name": "Accent 6 dark",
 					"slug": "accent-6-dark"
+				},
+				{
+					"color": "#7f39fa",
+					"name": "Menu base dark",
+					"slug": "menu-base-dark"
+				},
+				{
+					"color": "#ffffff",
+					"name": "Menu contrast dark",
+					"slug": "menu-contrast-dark"
 				}
 			]
 		},
