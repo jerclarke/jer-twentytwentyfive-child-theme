@@ -36,23 +36,23 @@ jobs:
             ${{ runner.os }}-composer-
 
       # Install the packages in your composer.json
-      - name: Install dependencies
+      - name: Composer install
         run: composer install --no-progress --prefer-dist
 
-      # Download WordPress stubs so PHPStan knows what get_header(), add_action(), etc. are
+      # Download .wp-stubs/wordpress-stubs.php file to feed to PHPStan
       - name: Download WordPress Stubs
         run: |
           mkdir -p .wp-stubs
           curl -sS https://raw.githubusercontent.com/php-stubs/wordpress-stubs/master/wordpress-stubs.php -o .wp-stubs/wordpress-stubs.php
 
-      - name: Check PHP Syntax
+      - name: PHP Syntax smoke test
         run: |
           find . -name "*.php" -type f -not -path "./vendor/*" -not -path "./node_modules/*" -exec php -l {} \;
 
-      # Run PHPStan, pointing it to our temporary stub folder to satisfy the missing core functions
+      # Run PHPStan with ci-specific neon file that has .wp-stubs/ in scanDirectories
       - name: Run PHPStan
         run: vendor/bin/phpstan analyze . --configuration=phpstan-ci.neon --memory-limit=1G
 
-      # Run PHP CodeSniffer against WordPress Coding Standards
+      # Run PHP CodeSniffer with our phpcs.xml.dist configuration plus ignoring the ci-specific .wp-stubs/ directory
       - name: Run PHPCS
-        run: vendor/bin/phpcs .
+        run: vendor/bin/phpcs . --ignore=.wp-stubs/
