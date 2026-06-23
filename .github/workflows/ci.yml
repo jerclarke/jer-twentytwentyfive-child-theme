@@ -55,4 +55,4 @@ jobs:
 
       # Run PHP CodeSniffer against WordPress Coding Standards
       - name: Run PHPCS
-        run: vendor/bin/phpcs
+        run: vendor/bin/phpcs .
