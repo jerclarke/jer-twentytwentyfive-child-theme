@@ -161,8 +161,8 @@ add_filter( 'wp_get_loading_optimization_attributes', 'jer_filter_wp_get_loading
 function jer_2025_get_pagination_fse_format() {
 
 	return '
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40"}}}} -->
-	<div class="wp-block-group jer-query-pagination" style="padding-top:var(--wp--preset--spacing--40);">
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}}} -->
+	<div class="wp-block-group jer-query-pagination" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);">
 		<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
 			<!-- wp:query-pagination-previous /-->
 			<!-- wp:query-pagination-numbers /-->
