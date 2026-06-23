@@ -9,12 +9,22 @@
  * @since Twenty Twenty-Five 1.0
  */
 
+/**
+ * ! About loading of synced patterns like `wp:block {"ref":9532}`
+ *
+ * This is done to hardcode the layout and allow me to hard-reset the theme at any time with Create Block Theme.
+ * The idea is that the test version of the site clones the live DB, so it has matching IDs and they keep working.
+ * If someone else uses the theme, so the synced patterns aren't in the DB with those IDs, it shows an error about
+ * the block not existing, so you remove it and replace it with something else.
+ */
+
 ?>
 <!-- wp:template-part {"slug":"header"} /-->
-<!-- wp:group -->
+
+<!-- wp:group {"metadata":{"name":"Jer Intro Header Container"},"className":"jer-intro-header-container"} -->
 <div class="wp-block-group jer-intro-header-container">
-	<!-- wp:template-part {"slug":"jer-about-page-content"} /-->
-	<!-- wp:template-part {"slug":"jer-widgets-page-content"} /-->
+	<!-- wp:block {"ref":9532} /-->
+	<!-- wp:block {"ref":9534} /-->
 </div>
 <!-- /wp:group -->
 

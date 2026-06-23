@@ -16,7 +16,7 @@
 
 <!-- wp:group -->
 <div class="wp-block-group jer-intro-footer-container">
-	<!-- wp:template-part {"slug":"jer-about-page-content"} /-->
+	<!-- wp:block {"ref":9532} /-->
 </div>
 <!-- /wp:group -->
 
