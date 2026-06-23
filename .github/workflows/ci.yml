@@ -19,8 +19,36 @@ jobs:
         with:
           php-version: '8.2'
           coverage: none
+          tools: composer
+
+      # Cache composer dependencies to make future runs faster
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps:composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      # Install the packages in your composer.json
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist
+
+      # Download WordPress stubs so PHPStan knows what get_header(), add_action(), etc. are
+      - name: Download WordPress Stubs
+        run: |
+          mkdir -p .wp-stubs
+          curl -sS https://raw.githubusercontent.com/php-stubs/wordpress-stubs/master/wordpress-stubs.php -o .wp-stubs/wordpress-stubs.php
 
       - name: Check PHP Syntax
         run: |
-          # Find all PHP files and run php -l on them
           find . -name "*.php" -type f -not -path "./vendor/*" -not -path "./node_modules/*" -exec php -l {} \;
+
+      # Run PHPStan, pointing it to our temporary stub folder to satisfy the missing core functions
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyze . --configuration=phpstan.neon --memory-limit=1G --surveyor-scan-dir=.wp-stubs
