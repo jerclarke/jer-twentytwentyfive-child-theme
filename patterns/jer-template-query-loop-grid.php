@@ -17,7 +17,7 @@
 
 <?php
 if ( is_paged() ) {
-	echo jer_2025_get_pagination_fse_format();
+	echo wp_kses_post( jer_2025_get_pagination_fse_format() );
 }
 ?>
 
@@ -43,6 +43,6 @@ if ( is_paged() ) {
 		<!-- /wp:group -->
 	<!-- /wp:query-no-results -->
 	 
-	<?php echo jer_2025_get_pagination_fse_format(); ?>
+	<?php echo wp_kses_post( jer_2025_get_pagination_fse_format() ); ?>
 </div>
 <!-- /wp:query -->
