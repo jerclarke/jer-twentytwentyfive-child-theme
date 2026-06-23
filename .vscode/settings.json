@@ -1,0 +1,29 @@
+{
+	// VS CODE CONFIG FOR WPCS/PHPCS/PHPCBF
+	
+	// Activate the sniffer (squigglies) and fixer (formatOnSave)
+	"phpsab.snifferEnable": true,
+	"phpsab.fixerEnable": true,
+	// Grab binaries from `composer install`
+	"phpsab.executablePathCS": "./vendor/bin/phpcs",
+	"phpsab.executablePathCBF": "./vendor/bin/phpcbf",
+	// Ensure it finds our PHPCS XML config
+	"phpsab.standard": "phpcs.xml.dist",
+	// Tell php files in this directory to use the phpsab extension and reformat on save
+	"[php]": {
+		"editor.defaultFormatter": "valeryanm.vscode-phpsab",
+		"editor.formatOnSave": true,
+		// Note we resave the whole file not because we want to, but because it's the only option! 
+		// VS Code has a 'modification' option for this setting, but line-level cleanup with PHPCBF is impossible even with --filter=GitModified below
+		"editor.formatOnSaveMode": "file",
+		"editor.tabSize": 6,
+		"editor.insertSpaces": false
+	},
+	// Exclude these from PHPCS entirely, no squigglies, no formatOnSave
+	"phpsab.excludeGlobs": [
+		"**/vendor/**",
+		"**/node_modules/**",
+		"**/excluded-specific-file.php",
+		"**/excluded-specificfolder/**"
+	]
+}
