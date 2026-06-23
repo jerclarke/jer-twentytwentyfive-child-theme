@@ -51,4 +51,4 @@ jobs:
 
       # Run PHPStan, pointing it to our temporary stub folder to satisfy the missing core functions
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyze . --configuration=phpstan.neon --memory-limit=1G --scan-dir=.wp-stubs
+        run: vendor/bin/phpstan analyze . --configuration=phpstan-ci.neon --memory-limit=1G

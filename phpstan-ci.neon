@@ -1,0 +1,8 @@
+# Extra phpstan config only for use in GitHub Actions CI. See phpstan.neon for the default local setup.
+
+includes:
+  - phpstan.neon
+
+parameters:
+  scanDirectories:
+    - .wp-stubs/
