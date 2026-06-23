@@ -7,6 +7,8 @@
  * @since Twenty Twenty-Five 1.0
  */
 
+require_once 'jer-block-styles.php';
+
 /**
  * Enqueue the style.css file.
  *
@@ -126,13 +128,31 @@ add_filter( 'wp_get_loading_optimization_attributes', 'jer_filter_wp_get_loading
 /**
  * Get FSE template code for our standard pagination block
  *
- * Note I tried extracting this as a /patterns/ but the query wasn't set up
- * correctly in that case. The current page was wrong and it seemed to just
- * not have access to the global $wp_query. Seems everything related to the
- * query has to be in the same template/part/pattern as the wp:query block.
+ * Used to DRY the pagination to avoid repeating it multiple times.
  *
- * By storing the format in this function instead it seems to work normally,
- * as the templating system just sees this format output in the parent pattern.
+ * Intended for use in hand-coding it into theme templates/patterns, specifically
+ * archive post list patterns.
+ *
+ * Note that because this is for use in block theme templates, the PHP must never
+ * be dynamic, any if or is_*() conditions will be hard-coded into the template as
+ * soon as it's modified in the editor!
+ *
+ * Note the reason we don't have it in a sub-pattern: Normally this would be a pattern
+ * and we'd just include it in the parent pattern/template BUT pagination MUST be
+ * in the same pattern/template as the query itself, otherwise it gets disconnected
+ * and the pagination links are broken and unrelated to the query! So we can't just
+ * have a pattern of this because it would have to include the whole query, and we
+ * want to use this in different patterns that have different query structures.
+ *
+ * i.e. I tried extracting this as /patterns/jer-pagination.php, which seemed
+ * to work because the links displayed, but ultimately the links were broken.
+ *
+ * Everything related to the query has to be in the same template/part/pattern as
+ * the wp:query block.
+ *
+ * By inserting it directly with PHP, the template system SEES the HTML from this
+ * function as part of the template, even though it's from elsewhere. So the queries
+ * are all hooked up correctly.
  *
  * ? WARNING: If ever making functions like this "dynamic" be very careful! If this was loaded into the editor and saved, the result would be based on the context in the editor and stored forever. Probably best to avoid ever making them dynamic, and if we ever do, test it VERY carefully!
  *

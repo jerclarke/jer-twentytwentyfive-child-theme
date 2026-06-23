@@ -15,11 +15,11 @@
 <!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-query alignwide">
 
-<?php
-if ( is_paged() ) {
-	echo wp_kses_post( jer_2025_get_pagination_fse_format() );
-}
-?>
+		<!-- wp:group {"metadata":{"name":"Top pagination (hidden on page 1)"},"className":"is-style-jer-hide-on-first-page","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group is-style-jer-hide-on-first-page">
+		<?php echo wp_kses_post( jer_2025_get_pagination_fse_format() ); ?>
+		</div>
+		<!-- /wp:group -->
 
 	<!-- wp:post-template {"fontSize":"tiny","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
 		<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"backgroundColor":"accent-1","layout":{"type":"constrained","justifyContent":"center"}} -->
