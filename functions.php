@@ -1,12 +1,15 @@
 <?php
 /**
- * Functions.php for jer-twentytwentyfive-child-theme
+ * Functions.php for jer-twentytwentyfive-child-theme.
  *
  * @package WordPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
 
+/**
+ * Load includes.
+ */
 require_once 'jer-block-styles.php';
 
 /**
