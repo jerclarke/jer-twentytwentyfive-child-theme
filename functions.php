@@ -68,7 +68,7 @@ add_action( 'init', 'jer_2025_add_excerpts_to_pages' );
  * to add fetchpriority=high to the first "large" image on the page.
  *
  * That logic doesn't work for the homepage in our theme setup, because the "widget" areas,
- * i.e. the page content inserted by jer-about-page-content.html and jer-widgets-page-content.html
+ * i.e. the synced patterns showing on the homepage and below post content on single.php
  * are never considered for this treatment, without this filter the images in them are always lazy
  * loaded and never get the fetchpriority flag.
  *
