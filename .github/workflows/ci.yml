@@ -96,7 +96,7 @@ jobs:
       # Use wp-browser's built-in tool to install WordPress automatically for the pipeline
       # This populates the folder specified in your suite configs
       - name: Install WordPress Core dependencies
-        run: vendor/bin/codecept wp-browser:install
+        run: vendor/bin/codecept wp:install
 
       # Start Chromedriver in headless mode in the background for your endtoend tests
       - name: Start Chromedriver
