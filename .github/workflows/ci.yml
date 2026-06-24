@@ -17,7 +17,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.3'
           coverage: none
           tools: composer
 
@@ -56,3 +56,52 @@ jobs:
       # Run PHP CodeSniffer with our phpcs.xml.dist configuration plus ignoring the ci-specific .wp-stubs/ directory
       - name: Run PHPCS
         run: vendor/bin/phpcs . --ignore=.wp-stubs/
+
+  # New parallel job specifically handles the functional/integration tests
+  wp-browser-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+          tools: composer
+          extensions: mysql, sqlite3, pdo_sqlite # Ensure SQLite tools are ready
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Composer install
+        run: composer install --no-progress --prefer-dist
+
+      # SQLite setup needs a directory to host the mock WordPress files
+      - name: Setup WordPress Core installation directory
+        run: mkdir -p ./wordpress
+
+      # Use wp-browser's built-in tool to install WordPress automatically for the pipeline
+      # This populates the folder specified in your suite configs
+      - name: Install WordPress Core dependencies
+        run: vendor/bin/wp-browser install
+
+      # Start Chromedriver in headless mode in the background for your endtoend tests
+      - name: Start Chromedriver
+        run: chromedriver --headless --disable-gpu --all-allowed-ips &
+
+      # Execute your test suites
+      - name: Run wp-browser tests
+        run: vendor/bin/codecept run
