@@ -7,6 +7,7 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
+  # Main job that runs PHPStan and PHPCS
   syntax-check:
     runs-on: ubuntu-latest
 
@@ -21,7 +22,6 @@ jobs:
           coverage: none
           tools: composer
 
-      # Cache composer dependencies to make future runs faster
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -35,11 +35,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      # Install the packages in your composer.json
       - name: Composer install
         run: composer install --no-progress --prefer-dist
 
-      # Download .wp-stubs/wordpress-stubs.php file to feed to PHPStan
+      # Download .wp-stubs/wordpress-stubs.php file to feed to PHPStan and PHPCS
       - name: Download WordPress Stubs
         run: |
           mkdir -p .wp-stubs
@@ -57,7 +56,7 @@ jobs:
       - name: Run PHPCS
         run: vendor/bin/phpcs . --ignore=.wp-stubs/
 
-  # New parallel job specifically handles the functional/integration tests
+  # Parallel job that handles wp-browser tests
   wp-browser-tests:
     runs-on: ubuntu-latest
     
@@ -89,26 +88,11 @@ jobs:
       - name: Composer install
         run: composer install --no-progress --prefer-dist
 
-      # Create the folder where your wpRootFolder configuration expects WordPress core
-      - name: Setup WordPress Core directory
-        run: mkdir -p tests/_wordpress
-
-      # Download and unzip clean WordPress core directly into the target folder
-      - name: Install WordPress Core files
+      - name: Insert WP core files in /tests/_wordpress/
         run: |
-          curl -sLO https://wordpress.org/latest.zip
-          unzip -q latest.zip
-          mv wordpress/* tests/_wordpress/
-          rm -rf wordpress latest.zip
+          curl -sL https://wordpress.org/latest.tar.gz | tar -xzf - --strip-components=1 -C tests/_wordpress
 
-      # Ensure SQLite directories exist so PDO doesn't crash
-      - name: Create SQLite Database directories
-        run: |
-          mkdir -p tests/Support/Data
-          mkdir -p tests/_wordpress/data
-
-      # Set the chromedriver location based on the action runner
-      - name: Locate Chromedriver Binary
+      - name: Update /tests/.env to set CHROMEDRIVER_BINARY to action runner pre-installed location
         run: |
           # Get the absolute resolved path of the binary
           CHROMEDRIVER_PATH=$(realpath $(which chromedriver))
@@ -117,16 +101,14 @@ jobs:
           # This replaces any existing CHROMEDRIVER_BINARY line with the real path
           sed -i "s|CHROMEDRIVER_BINARY=.*|CHROMEDRIVER_BINARY=$CHROMEDRIVER_PATH|g" tests/.env
 
-       # Fix errors about .env variables not being defined
-      - name: Load Dotenv variables
+      - name: Load /tests/.env
         uses: xom9ikk/dotenv@v2
         with:
           path: ./tests
       
-      # Execute your test suites
       - name: Run wp-browser tests
         run: vendor/bin/codecept run
         env:
-          # Override chromedriver location to match GHA runner pre-installed 
+          # Override ports to match standard GHA runner setup
           CHROMEDRIVER_PORT: 9515
           BUILTIN_SERVER_PORT: 8080
