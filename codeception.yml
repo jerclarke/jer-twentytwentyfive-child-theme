@@ -28,7 +28,7 @@ extensions:
                 DB_DIR: '%codecept_root_dir%/tests/Support/Data'
                 DB_FILE: db.sqlite
         lucatume\WPBrowser\Extension\Symlinker:
-            wpRootFolder: '%WORDPRESS_ROOT_DIR%'
+            wpRootFolder: tests/_wordpress
             themes:
                 - .
     commands:
