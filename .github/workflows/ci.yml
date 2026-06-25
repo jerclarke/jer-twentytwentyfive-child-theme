@@ -107,12 +107,9 @@ jobs:
         with:
           path: ./tests
 
-      # Start Chromedriver in headless mode in the background for your endtoend tests
-      - name: Start Chromedriver
-        run: |
-          # Locate the pre-installed binary and save it to the global environment
-          echo "CHROMEDRIVER_BINARY=$(which chromedriver)" >> $GITHUB_ENV
-          chromedriver --headless --disable-gpu --all-allowed-ips &
+       # Set the chromedriver location based on the action runner
+      - name: Locate Chromedriver Binary
+        run: echo "CHROMEDRIVER_BINARY=$(which chromedriver)" >> $GITHUB_ENV
 
       # Execute your test suites
       - name: Run wp-browser tests
