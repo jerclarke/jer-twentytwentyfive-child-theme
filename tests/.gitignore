@@ -1,0 +1,6 @@
+# Ignore the WordPress core folder by default
+/_wordpress/*
+
+# Whitelist the essential wp-browser configuration files
+!/_wordpress/wp-config.php
+!/_wordpress/data/
