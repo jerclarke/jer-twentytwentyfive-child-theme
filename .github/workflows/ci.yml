@@ -101,29 +101,26 @@ jobs:
           mv wordpress/* tests/_wordpress/
           rm -rf wordpress latest.zip
 
-      # Fix errors about .env variables not being defined
-      - name: Load Dotenv variables
-        uses: xom9ikk/dotenv@v2
-        with:
-          path: ./tests
-
       # Set the chromedriver location based on the action runner
       - name: Locate Chromedriver Binary
         run: |
           # Get the absolute resolved path of the binary
           CHROMEDRIVER_PATH=$(realpath $(which chromedriver))
           
-          # Force executable permissions just in case
-          sudo chmod +x "$CHROMEDRIVER_PATH"
-          
-          # Save it to the environment
-          echo "CHROMEDRIVER_BINARY=$CHROMEDRIVER_PATH" >> $GITHUB_ENV
+          # Force it directly into Codeception's parameter file (.env)
+          # This replaces any existing CHROMEDRIVER_BINARY line with the real path
+          sed -i "s|CHROMEDRIVER_BINARY=.*|CHROMEDRIVER_BINARY=$CHROMEDRIVER_PATH|g" tests/.env
 
+       # Fix errors about .env variables not being defined
+      - name: Load Dotenv variables
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./tests
+      
       # Execute your test suites
       - name: Run wp-browser tests
         run: vendor/bin/codecept run
         env:
           # Override chromedriver location to match GHA runner pre-installed 
-          CHROMEDRIVER_BINARY: ${{ env.CHROMEDRIVER_BINARY }}
           CHROMEDRIVER_PORT: 9515
           BUILTIN_SERVER_PORT: 8080
