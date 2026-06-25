@@ -116,6 +116,6 @@ jobs:
         run: vendor/bin/codecept run
         env:
           # Override chromedriver location to match GHA runner pre-installed 
-          CHROMEDRIVER_PATH: /usr/local/bin/chromedriver
+          CHROMEDRIVER_BINARY: /usr/local/bin/chromedriver
           CHROMEDRIVER_PORT: 9515
           BUILTIN_SERVER_PORT: 8080
