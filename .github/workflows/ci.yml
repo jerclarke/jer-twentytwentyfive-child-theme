@@ -38,6 +38,10 @@ jobs:
       - name: Composer install
         run: composer install --no-progress --prefer-dist
 
+      # Have to run this so PHPStan has access to the classes referenced in /tests/
+      - name: Build Codeception /_generated/ actor classes
+        run: vendor/bin/codecept build
+
       # Download .wp-stubs/wordpress-stubs.php file to feed to PHPStan and PHPCS
       - name: Download WordPress Stubs
         run: |
