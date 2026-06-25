@@ -91,14 +91,14 @@ jobs:
 
       # Create the folder where your wpRootFolder configuration expects WordPress core
       - name: Setup WordPress Core directory
-        run: mkdir -p ./_wordpress
+        run: mkdir -p tests/_wordpress
 
       # Download and unzip clean WordPress core directly into the target folder
       - name: Install WordPress Core files
         run: |
           curl -sLO https://wordpress.org/latest.zip
           unzip -q latest.zip
-          mv wordpress/* ./_wordpress/
+          mv wordpress/* tests/_wordpress/
           rm -rf wordpress latest.zip
 
       # Fix errors about .env variables not being defined
