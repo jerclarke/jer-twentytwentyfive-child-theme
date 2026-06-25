@@ -18,6 +18,7 @@ extensions:
     config:
         lucatume\WPBrowser\Extension\ChromeDriverController:
             port: '%CHROMEDRIVER_PORT%'
+            binary: '%CHROMEDRIVER_BINARY%'
         lucatume\WPBrowser\Extension\BuiltInServerController:
             workers: 5
             port: '%BUILTIN_SERVER_PORT%'
