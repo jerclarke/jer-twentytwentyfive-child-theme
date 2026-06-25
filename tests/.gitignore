@@ -1,6 +1,9 @@
-# Ignore the WordPress core folder by default
+# SEE: /tests/jer-about-tests.md
+
+# Ignore the WordPress core installation used by wp-browser
 /_wordpress/*
 
-# Whitelist the essential wp-browser configuration files
+# Whitelist the non-core contents of the /_wordpress/ install created by `vendor/bin/codecept init wpbrowser`
 !/_wordpress/wp-config.php
 !/_wordpress/data/
+!/Support/Data/dump.sql
