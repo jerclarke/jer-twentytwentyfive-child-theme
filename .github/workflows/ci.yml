@@ -101,6 +101,12 @@ jobs:
           mv wordpress/* tests/_wordpress/
           rm -rf wordpress latest.zip
 
+      # Ensure SQLite directories exist so PDO doesn't crash
+      - name: Create SQLite Database directories
+        run: |
+          mkdir -p tests/Support/Data
+          mkdir -p tests/_wordpress/data
+
       # Set the chromedriver location based on the action runner
       - name: Locate Chromedriver Binary
         run: |
