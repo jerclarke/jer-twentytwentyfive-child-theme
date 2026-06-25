@@ -107,9 +107,17 @@ jobs:
         with:
           path: ./tests
 
-       # Set the chromedriver location based on the action runner
+      # Set the chromedriver location based on the action runner
       - name: Locate Chromedriver Binary
-        run: echo "CHROMEDRIVER_BINARY=$(which chromedriver)" >> $GITHUB_ENV
+        run: |
+          # Get the absolute resolved path of the binary
+          CHROMEDRIVER_PATH=$(realpath $(which chromedriver))
+          
+          # Force executable permissions just in case
+          sudo chmod +x "$CHROMEDRIVER_PATH"
+          
+          # Save it to the environment
+          echo "CHROMEDRIVER_BINARY=$CHROMEDRIVER_PATH" >> $GITHUB_ENV
 
       # Execute your test suites
       - name: Run wp-browser tests
