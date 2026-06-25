@@ -3,14 +3,13 @@ parameters:
     # A level must be specified here or else with every command
     level: 10
     excludePaths:
-        # Don't analyze /vendor/ dir (though it will be scanned)
-        - vendor/
-        # Don't scan wordpress folder, otherwise it finds symlinks in /tests/_wordpress/wp-content/themes/ and goes crazy
-        - tests/_wordpress/
-        # Exclude various generated wp-browser files from analysis but do discover symbols in them
-        - tests/Support/
-        # analyse:
-        #     - tests/Support/
+        # Scan but exclude from analysis /vendor/ and generated wp-browser files
+        analyse:
+            - vendor/
+            - tests/Support/
+        # Don't even scan (excluded from both analyze and scan) wordpress folder, otherwise it finds symlinks in /tests/_wordpress/wp-content/themes/ and goes crazy
+        analyseAndScan:
+            - tests/_wordpress/
     # "Discover Symbols" (but don't analyze) in the entire WP install
     scanDirectories:
       - ../../../
