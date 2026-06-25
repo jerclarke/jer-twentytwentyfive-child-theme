@@ -101,6 +101,12 @@ jobs:
           mv wordpress/* ./_wordpress/
           rm -rf wordpress latest.zip
 
+      # Fix errors about .env variables not being defined
+      - name: Load Dotenv variables
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./tests
+
       # Start Chromedriver in headless mode in the background for your endtoend tests
       - name: Start Chromedriver
         run: chromedriver --headless --disable-gpu --all-allowed-ips &
@@ -108,3 +114,6 @@ jobs:
       # Execute your test suites
       - name: Run wp-browser tests
         run: vendor/bin/codecept run
+        env:
+          CHROMEDRIVER_PORT: 9515
+          BUILTIN_SERVER_PORT: 8080
