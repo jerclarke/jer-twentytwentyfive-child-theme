@@ -4,34 +4,30 @@ namespace Tests;
 
 use lucatume\WPBrowser\TestCase\WPTestCase;
 
-class SampleTest extends WPTestCase
-{
-    public function setUp(): void
-    {
-        // Before...
-        parent::setUp();
+class SampleTest extends WPTestCase {
 
-        // Your set-up methods here.
-    }
+	public function setUp(): void {
+		// Before...
+		parent::setUp();
 
-    public function tearDown(): void
-    {
-        // Your tear down methods here.
+		// Your set-up methods here.
+	}
 
-        // Then...
-        parent::tearDown();
-    }
+	public function tearDown(): void {
+		// Your tear down methods here.
 
-    // Tests
-    public function test_factory(): void
-    {
-        $post = static::factory()->post->create_and_get();
+		// Then...
+		parent::tearDown();
+	}
 
-        $this->assertInstanceOf(\WP_Post::class, $post);
-    }
+	// Tests
+	public function test_factory(): void {
+		$post = static::factory()->post->create_and_get();
 
-    public function test_theme_active(): void
-    {
-        $this->assertTrue(wp_get_theme()->stylesheet === 'jer-twentytwentyfive-child-theme');
-    }
+		$this->assertInstanceOf( \WP_Post::class, $post );
+	}
+
+	public function test_theme_active(): void {
+		$this->assertTrue( wp_get_theme()->get_stylesheet() === 'jer-twentytwentyfive-child-theme' );
+	}
 }
