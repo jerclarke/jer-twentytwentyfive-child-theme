@@ -42,23 +42,15 @@ jobs:
       - name: Build Codeception /_generated/ actor classes
         run: vendor/bin/codecept build
 
-      # Download .wp-stubs/wordpress-stubs.php file to feed to PHPStan and PHPCS
-      - name: Download WordPress Stubs
-        run: |
-          mkdir -p .wp-stubs
-          curl -sS https://raw.githubusercontent.com/php-stubs/wordpress-stubs/master/wordpress-stubs.php -o .wp-stubs/wordpress-stubs.php
-
       - name: PHP Syntax smoke test
         run: |
           find . -name "*.php" -type f -not -path "./vendor/*" -not -path "./node_modules/*" -exec php -l {} \;
 
-      # Run PHPStan with ci-specific neon file that has .wp-stubs/ in scanDirectories
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyze . --configuration=phpstan-ci.neon --memory-limit=1G
+        run: vendor/bin/phpstan analyze . --configuration=phpstan.neon --memory-limit=2G
 
-      # Run PHP CodeSniffer with our phpcs.xml.dist configuration plus ignoring the ci-specific .wp-stubs/ directory
       - name: Run PHPCS
-        run: vendor/bin/phpcs . --ignore=.wp-stubs/
+        run: vendor/bin/phpcs .
 
   # Parallel job that handles wp-browser tests
   wp-browser-tests:

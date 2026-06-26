@@ -12,4 +12,4 @@ parameters:
             - tests/_wordpress/
     # "Discover Symbols" (but don't analyze) in the entire WP install
     scanDirectories:
-      - ../../../
+        - vendor/php-stubs/wordpress-stubs/
