@@ -44,7 +44,7 @@ jobs:
 
       - name: PHP Syntax smoke test
         run: |
-          find . -name "*.php" -type f -not -path "./vendor/*" -not -path "./node_modules/*" -exec php -l {} \;
+          find . -name "*.php" -type f -not -path "./vendor/*" -not -path "./node_modules/*" -print0 | xargs -0 -n 1 -P 4 php -l
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyze . --configuration=phpstan.neon --memory-limit=2G
@@ -55,7 +55,7 @@ jobs:
   # Parallel job that handles wp-browser tests
   wp-browser-tests:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -92,7 +92,7 @@ jobs:
         run: |
           # Get the absolute resolved path of the binary
           CHROMEDRIVER_PATH=$(realpath $(which chromedriver))
-          
+
           # Force it directly into Codeception's parameter file (.env)
           # This replaces any existing CHROMEDRIVER_BINARY line with the real path
           sed -i "s|CHROMEDRIVER_BINARY=.*|CHROMEDRIVER_BINARY=$CHROMEDRIVER_PATH|g" tests/.env
@@ -101,7 +101,7 @@ jobs:
         uses: xom9ikk/dotenv@v2
         with:
           path: ./tests
-      
+
       - name: Run wp-browser tests
         run: vendor/bin/codecept run
         env:
