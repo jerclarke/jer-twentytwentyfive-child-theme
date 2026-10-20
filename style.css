@@ -18,14 +18,14 @@ Tags:
 
 /**
  * Dark mode toggle CSS
- * 
+ *
  * This should work with or without the dark-mode-toggle-block, but with it enabled
- * the complex code below ensures that dark mode shows by default based on user 
+ * the complex code below ensures that dark mode shows by default based on user
  * preference, but the switch still inverts it back to light mode.
- * 
- * If deploying this without the switch, we'd just need the bottom section to 
- * Set all the CSS vars on body when @media (prefers-color-scheme: dark) 
- * 
+ *
+ * If deploying this without the switch, we'd just need the bottom section to
+ * Set all the CSS vars on body when @media (prefers-color-scheme: dark)
+ *
  * @see https://github.com/richtabor/dark-mode-toggle-block/issues/17
  */
 
@@ -49,7 +49,7 @@ Tags:
 		--wp--preset--color--accent-6: var(--wp--preset--color--accent-6-dark);
 	}
 }
-/* In dark default the switch is inverted with :not, so the dark colors apply as long as 
+/* In dark default the switch is inverted with :not, so the dark colors apply as long as
 the switch is NOT clicked, and clicking the switch reverts the colors to light mode */
 @media (prefers-color-scheme: dark) {
 	.wp-block-tabor-dark-mode-toggle {
@@ -136,11 +136,11 @@ so we specify them as white here only when modal is open */
 
 /* Fix issue where header menu links weren't purple on hover */
 :root:not(.has-modal-open) .wp-block-navigation a:hover {
-	color: var(--wp--preset--color--accent-3) !important; 
+	color: var(--wp--preset--color--accent-3) !important;
 }
 /* Links inside the hover submenu should be white for purple background */
 .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-submenu a:hover {
-	color: var(--wp--preset--color--menu-contrast) !important; 
+	color: var(--wp--preset--color--menu-contrast) !important;
 }
 /* Add spacing inside hover submenu to match space between items */
 :root:not(.has-modal-open) .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-submenu {
