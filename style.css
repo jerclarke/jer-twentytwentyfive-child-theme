@@ -79,14 +79,6 @@ the switch is NOT clicked, and clicking the switch reverts the colors to light m
     height: calc(var(--icon-size) + 4px);
 }
 
-/* Disabled - This makes the modal dark purple background with white text, rather than light purple with black text, as happens naturally with dark mode inversion. Would need extra work to make it work with the switcher though, and I think maybe I like the light purple anyway. Explanation of how it works (originally thought I needed this just to control the modal, but turns out I could control the main background/text colors with overlayBackgroundColor and overlayTextColor): @link https://wordpress.stackexchange.com/questions/431775/how-can-i-change-the-background-color-of-the-built-in-navigation-modal-of-wordpr/431776#431776   */
-/* @media (prefers-color-scheme: dark) {
-	:root.has-modal-open {
-		--wp--preset--color--base-dark: var(--wp--preset--color--contrast-dark);
-		--wp--preset--color--accent-3-dark: var(--wp--preset--color--accent-3-dark);
-	}
-} */
-
 /* Seems there's no way to alter the breakpoints where columns switch from 3 to 1, this raises it from 600 to 100 for post grids */
 @media (max-width: 1000px) {
 	.wp-block-post-template-is-layout-grid {
@@ -97,13 +89,6 @@ the switch is NOT clicked, and clicking the switch reverts the colors to light m
 /* Some aggressive text-wrap values that can't go in theme.json*/
 body {
 	text-wrap: pretty;
-}
-
-/* Modal is purple with white text, but the SVG icons can't be modified within the overlay
-so we specify them as white here only when modal is open */
-:root.has-modal-open .wp-block-social-links svg,
-:root.has-modal-open .wp-block-social-links a svg {
-	color: var(--wp--preset--color--menu-contrast) !important;
 }
 
 /* Tweak modal menu style to have big text and sensible spacing on sub-lists */
@@ -121,7 +106,7 @@ so we specify them as white here only when modal is open */
 	padding-top: 0;
 	padding-left: 0;
 	padding-right: 1em;
-	border-right: 3px solid var(--wp--preset--color--menu-contrast);
+	border-right: 3px solid var(--wp--preset--color--contrast);
 	margin-top: 1em;
 }
 
@@ -134,14 +119,6 @@ so we specify them as white here only when modal is open */
 	padding-top: 0;
 }
 
-/* Fix issue where header menu links weren't purple on hover */
-:root:not(.has-modal-open) .wp-block-navigation a:hover {
-	color: var(--wp--preset--color--accent-3) !important;
-}
-/* Links inside the hover submenu should be white for purple background */
-.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-submenu a:hover {
-	color: var(--wp--preset--color--menu-contrast) !important;
-}
 /* Add spacing inside hover submenu to match space between items */
 :root:not(.has-modal-open) .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-submenu {
 	padding-top:  var(--wp--preset--spacing--20);
@@ -150,7 +127,7 @@ so we specify them as white here only when modal is open */
 /* Rounded corners and no border on hover submenu */
 :root:not(.has-modal-open) .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-submenu,
 :root:not(.has-modal-open) .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-submenu li {
-	border: none;
+	border-color: var(--wp--preset--color--accent-6);
 	border-radius:  var(--jer--preset--round-corners--default);
 }
 
